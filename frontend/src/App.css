@@ -26,6 +26,16 @@
   h1 {
     @apply font-cinzel text-4xl text-neutral-lightest;
   }
+
+  .logo-hp{
+    padding: 1rem;
+  }
+
+  #menu{
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+
 }
 
 /* Custom CSS rules for components (.card, .btn, ...) */
