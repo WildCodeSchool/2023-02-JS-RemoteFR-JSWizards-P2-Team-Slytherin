@@ -3,7 +3,7 @@ const NavBar = () => {
     <nav id="navbar" class="flex justify-between items-center">
       <div>
         <img
-          className="logo-hp"
+          className="Logo-hp"
           src="src/assets/logo/logo-desktop.png"
           alt="Return to homepage"
         />
