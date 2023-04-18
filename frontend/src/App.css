@@ -10,11 +10,7 @@
   font-weight: 700;
   src: url("./assets/fonts/cinzelDecorative-bold.ttf") format("truetype");
 }
-@font-face {
-  font-family: "Libre Baskerville";
-  font-weight: 700;
-  src: url("./assets/fonts/libreBaskerville-bold.ttf") format("truetype");
-}
+
 @font-face {
   font-family: "Libre Baskerville";
   font-weight: 400;
