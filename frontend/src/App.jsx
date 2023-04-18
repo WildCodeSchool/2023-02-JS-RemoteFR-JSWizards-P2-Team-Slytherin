@@ -1,5 +1,5 @@
 import Home from "./pages/Home";
-import CardBoard from "./components/CardBoard"
+import CardBoard from "./components/CardBoard";
 
 import "./App.css";
 
