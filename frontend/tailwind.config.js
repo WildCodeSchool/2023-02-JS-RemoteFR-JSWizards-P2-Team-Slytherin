@@ -33,77 +33,49 @@ module.exports = {
       },
 
       fontSize: {
-        btn: [
-          "1.5rem",
-          {
-            lineHeight: "2rem",
-            letterSpacing: "0.05em",
-            fontWeight: "700",
-          },
+        "btn-mobile": [
+          "0.875rem",
+          { lineHeight: "1.714", letterSpacing: "0.032em", fontWeight: "700" },
         ],
-        caption: [
-          "0.75rem",
-          {
-            lineHeight: "1rem",
-            letterSpacing: "0",
-            fontWeight: "400",
-          },
+        "btn-desktop": [
+          "1.5rem",
+          { lineHeight: "1.5", letterSpacing: "0.032em", fontWeight: "700" },
+        ],
+        "2xs": [
+          "0.5rem",
+          { lineHeight: "2", letterSpacing: "0", fontWeight: "400" },
         ],
         xs: [
-          "0.875rem",
-          {
-            lineHeight: "1.25rem",
-            letterSpacing: "0",
-            fontWeight: "400",
-          },
+          "0.75rem",
+          { lineHeight: "1.333", letterSpacing: "0", fontWeight: "400" },
         ],
         sm: [
-          "1rem",
-          {
-            lineHeight: "1.5rem",
-            letterSpacing: "0",
-            fontWeight: "400",
-          },
+          "0.875rem",
+          { lineHeight: "1.714", letterSpacing: "0", fontWeight: "400" },
         ],
         base: [
-          "1.25rem",
-          {
-            lineHeight: "2rem",
-            letterSpacing: "0",
-            fontWeight: "400",
-          },
+          "1rem",
+          { lineHeight: "1.75", letterSpacing: "0", fontWeight: "400" },
         ],
-        baseBold: [
-          "1.25rem",
-          {
-            lineHeight: "2rem",
-            letterSpacing: "0",
-            fontWeight: "700",
-          },
+        lg: [
+          "1.5rem",
+          { lineHeight: "1.5", letterSpacing: "0", fontWeight: "400" },
         ],
         xl: [
-          "2.5rem",
-          {
-            lineHeight: "3rem",
-            letterSpacing: "0",
-            fontWeight: "400",
-          },
+          "2.25rem",
+          { lineHeight: "1.333", letterSpacing: "0", fontWeight: "400" },
         ],
         "2xl": [
-          "4rem",
-          {
-            lineHeight: "4.5rem",
-            letterSpacing: "0",
-            fontWeight: "400",
-          },
+          "2.625rem",
+          { lineHeight: "1.333", letterSpacing: "0.032em", fontWeight: "700" },
         ],
         "3xl": [
-          "8.75rem",
-          {
-            lineHeight: "10rem",
-            letterSpacing: "0",
-            fontWeight: "700",
-          },
+          "3.5rem",
+          { lineHeight: "1.143", letterSpacing: "0", fontWeight: "400" },
+        ],
+        "4xl": [
+          "7.5rem",
+          { lineHeight: "1.333", letterSpacing: "0.032em", fontWeight: "700" },
         ],
       },
     },

@@ -28,7 +28,7 @@
 /* Custom CSS rules for base HTML elements */
 @layer base {
   h1 {
-    @apply font-cinzel text-3xl text-neutral-lightest;
+    @apply font-cinzel text-4xl text-neutral-lightest;
   }
 }
 
