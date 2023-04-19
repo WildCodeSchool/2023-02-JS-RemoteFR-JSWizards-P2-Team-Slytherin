@@ -6,7 +6,7 @@ import BackCard from "./components/BackCard";
 import "./App.css";
 
 function App() {
-  const wizard = wizards[0];
+  const wizard = wizards[4];
   return (
     <div className="App">
       <Home />
