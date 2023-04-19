@@ -2,46 +2,55 @@
   {
     "id": "1",
     "nameClue": "Gender",
-    "question": "What gender is the character?"
+    "question": "What gender is the character?",
+    "response": "The character is a "
   },
   {
     "id": "2",
     "nameClue": "Specie",
-    "question": "What specie of character is that?"
+    "question": "What specie of character is that?",
+    "response": "The character is a "
   },
   {
     "id": "3",
     "nameClue": "House",
-    "question": "What house is the character from?"
+    "question": "What house is the character from?",
+    "response": "the character is part of the house : "
   },
   {
     "id": "4",
     "nameClue": "Eye_Color",
-    "question": "What color are the character’s eyes?"
+    "question": "What color are the character’s eyes?",
+    "response": "The hair color of the character is : "
   },
   {
     "id": "5",
     "nameClue": "Hair_Color",
-    "question": "What color is the character’s hair?"
+    "question": "What color is the character’s hair?",
+    "response": "The hair color of the character is : "
   },
   {
     "id": "6",
     "nameClue": "Status",
-    "question": "What is the status of the character?"
+    "question": "What is the status of the character?",
+    "response": "The status of the character is : "
   },
   {
     "id": "7",
     "nameClue": "Actor",
-    "question": "what is the name of the actor in my character?"
+    "question": "what is the name of the actor in my character?",
+    "response": "The actor who embodies the character is : "
   },
   {
     "id": "8",
     "nameClue": "Patronus",
-    "question": "What is the animal protector of my character?"
+    "question": "What is the animal protector of my character?",
+    "response": "The character’s protective animal is : "
   },
   {
     "id": "9",
     "nameClue": "Wand",
-    "question": "What’s the name of my character’s magic wand?"
+    "question": "What’s the name of my character’s magic wand?",
+    "response": "The character’s magic wand is : "
   }
 ]
