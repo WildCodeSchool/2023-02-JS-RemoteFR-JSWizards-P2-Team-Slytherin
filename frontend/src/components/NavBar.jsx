@@ -3,12 +3,12 @@ const NavBar = () => {
     <nav id="navbar" class="flex justify-between items-center">
       <div>
         <img
-          className="Logo-hp"
+          class="p-4"
           src="src/assets/logo/logo-desktop.png"
           alt="Return to homepage"
         />
       </div>
-      <ul id="menu" class="flex">
+      <ul id="menu" class="flex p-4 gap-5">
         <li>
           <img src="src/assets/icon/rules.svg" alt="Game rules" />
         </li>

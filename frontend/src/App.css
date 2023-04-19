@@ -27,15 +27,6 @@
     @apply font-cinzel text-4xl text-neutral-lightest;
   }
 
-  .Logo-hp{
-    padding: 1rem;
-  }
-
-  #menu{
-    gap: 1.5rem;
-    padding: 2rem;
-  }
-
   .App {
     background-image: url("src/assets/img/background-game-screen-desktop.png");
     height: 100vh;
