@@ -5,7 +5,7 @@ const NavBar = () => {
         <button>
           <a href="src/pages/Home.jsx">
             <img
-              class="p-4"
+              class="p-4 h-32"
               src="src/assets/logo/logo-desktop.png"
               alt="Return to homepage"
             />
@@ -34,7 +34,9 @@ const NavBar = () => {
         </li>
         <li>
           <button>
-            <img src="src/assets/icon/settings.svg" alt="Settings" />
+            <a href="src/pages/GamePage.jsx">
+              <img src="src/assets/icon/settings.svg" alt="Settings" />
+            </a>
           </button>
         </li>
       </ul>
