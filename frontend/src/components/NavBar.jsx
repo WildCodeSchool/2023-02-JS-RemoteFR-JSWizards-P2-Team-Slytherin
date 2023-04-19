@@ -1,30 +1,32 @@
+import { Link } from "react-router-dom";
+
 const NavBar = () => {
   return (
-    <nav id="navbar" class="flex justify-between items-center">
+    <nav id="navbar" className="flex justify-between items-center">
       <div>
         <button>
-          <a href="src/pages/Home.jsx">
+          <Link to="/">
             <img
-              class="p-4 h-32"
+              className="p-4 h-32"
               src="src/assets/logo/logo-desktop.png"
               alt="Return to homepage"
             />
-          </a>
+          </Link>
         </button>
       </div>
-      <ul id="menu" class="flex p-4 gap-5">
+      <ul id="menu" className="flex p-4 gap-5">
         <li>
           <button>
-            <a href="src/pages/RulesPage.jsx">
+            <Link to="/rules">
               <img src="src/assets/icon/rules.svg" alt="Game rules" />
-            </a>
+            </Link>
           </button>
         </li>
         <li>
           <button>
-            <a href="src/pages/ScorePage.jsx">
+            <Link to="/score">
               <img src="src/assets/icon/score.svg" alt="Scores" />
-            </a>
+            </Link>
           </button>
         </li>
         <li>
@@ -34,9 +36,9 @@ const NavBar = () => {
         </li>
         <li>
           <button>
-            <a href="src/pages/GamePage.jsx">
+            <Link to="/game">
               <img src="src/assets/icon/settings.svg" alt="Settings" />
-            </a>
+            </Link>
           </button>
         </li>
       </ul>
