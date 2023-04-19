@@ -1,4 +1,4 @@
-import TestCard from "./TestCard";
+import FrontCard from "./FrontCard";
 import "./CardBoard.css";
 
 export default function CardBoard() {
@@ -7,30 +7,30 @@ export default function CardBoard() {
       <div className="flex">
         <div className="cardcontainer flex justify-center items-center flex-col text-center">
           <div className="content flex flex-wrap ">
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
           </div>
           <div className="content flex flex-wrap">
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
           </div>
           <div className="content flex flex-wrap">
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
-            <TestCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
+            <FrontCard />
           </div>
         </div>
       </div>
