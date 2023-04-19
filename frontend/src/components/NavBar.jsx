@@ -1,37 +1,37 @@
 import { Link } from "react-router-dom";
 
-const NavBar = () => {
+function NavBar() {
   return (
     <header>
-      <nav className="flex justify-between items-center">
+      <nav className="flex items-center justify-between">
         <div>
-          <button>
+          <button type="button">
             <Link to="/">
               <img
-                className="p-4 h-32"
+                className="h-32 p-4"
                 src="src/assets/logo/logo-desktop.png"
                 alt="Return to homepage"
               />
             </Link>
           </button>
         </div>
-        <ul id="menu" className="flex p-4 gap-5">
+        <ul id="menu" className="flex gap-5 p-4">
           <li>
-            <button>
+            <button type="button">
               <Link to="/rules">
                 <img src="src/assets/icon/rules.svg" alt="Game rules" />
               </Link>
             </button>
           </li>
           <li>
-            <button>
+            <button type="button">
               <Link to="/score">
                 <img src="src/assets/icon/score.svg" alt="Scores" />
               </Link>
             </button>
           </li>
           <li>
-            <button>
+            <button type="button">
               <img src="src/assets/icon/sound-on.svg" alt="Sound on" />
             </button>
           </li>
@@ -39,6 +39,6 @@ const NavBar = () => {
       </nav>
     </header>
   );
-};
+}
 
 export default NavBar;

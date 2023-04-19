@@ -1,7 +1,7 @@
 import Layout from "@components/Layout";
 
-const ScorePage = () => {
-  return <Layout></Layout>;
-};
+function ScorePage() {
+  return <Layout />;
+}
 
 export default ScorePage;
