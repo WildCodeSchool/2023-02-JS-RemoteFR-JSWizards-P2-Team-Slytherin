@@ -1,0 +1,47 @@
+[
+  {
+    "id": "1",
+    "nameClue": "Gender",
+    "question": "What gender is the character?"
+  },
+  {
+    "id": "2",
+    "nameClue": "Specie",
+    "question": "What specie of character is that?"
+  },
+  {
+    "id": "3",
+    "nameClue": "House",
+    "question": "What house is the character from?"
+  },
+  {
+    "id": "4",
+    "nameClue": "Eye_Color",
+    "question": "What color are the character’s eyes?"
+  },
+  {
+    "id": "5",
+    "nameClue": "Hair_Color",
+    "question": "What color is the character’s hair?"
+  },
+  {
+    "id": "6",
+    "nameClue": "Status",
+    "question": "What is the status of the character?"
+  },
+  {
+    "id": "7",
+    "nameClue": "Actor",
+    "question": "what is the name of the actor in my character?"
+  },
+  {
+    "id": "8",
+    "nameClue": "Patronus",
+    "question": "What is the animal protector of my character?"
+  },
+  {
+    "id": "9",
+    "nameClue": "Wand",
+    "question": "What’s the name of my character’s magic wand?"
+  }
+]
