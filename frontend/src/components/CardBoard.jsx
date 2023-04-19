@@ -4,32 +4,34 @@ import "./CardBoard.css";
 export default function CardBoard() {
   return (
     <div>
-      <div className="cardcontainer">
-        <div className="cardcontainer1 flex flex-wrap ">
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-        </div>
-        <div className="container2 flex flex-wrap">
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-        </div>
-        <div className="container3 flex flex-wrap">
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
-          <TestCard />
+      <div className="flex">
+        <div className="cardcontainer flex justify-center items-center flex-col text-center">
+          <div className="content flex flex-wrap ">
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+          </div>
+          <div className="content flex flex-wrap">
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+          </div>
+          <div className="content flex flex-wrap">
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+            <TestCard />
+          </div>
         </div>
       </div>
     </div>
