@@ -1,7 +1,6 @@
 import Layout from "@components/Layout";
 import FrontCard from "@components/FrontCard";
 import BackCard from "@components/BackCard";
-import DialogBox from "@components/DialogBox";
 import wizards from "../data/data.json";
 
 function GamePage() {
