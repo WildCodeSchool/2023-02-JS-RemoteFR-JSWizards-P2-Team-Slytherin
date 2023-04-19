@@ -8,7 +8,6 @@ function GamePage() {
   const wizard = wizards[4];
   return (
     <Layout>
-      <DialogBox />
       <FrontCard name={wizard.name} image={wizard.image} />
       <BackCard />
     </Layout>
