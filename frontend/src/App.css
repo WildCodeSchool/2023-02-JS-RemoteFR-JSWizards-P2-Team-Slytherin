@@ -36,6 +36,10 @@
 
 /* Custom CSS rules for components (.card, .btn, ...) */
 @layer components {
+
+  button {
+    cursor: pointer;
+  }
 }
 
 /* Custom CSS rules for utilities (.layout, .shadow, ...) */
