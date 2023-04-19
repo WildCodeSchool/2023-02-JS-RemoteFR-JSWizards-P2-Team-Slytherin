@@ -1,8 +1,4 @@
-.cardcontainer {
-  border: solid red;
-  height: 510px;
-  max-width: 834px;
-}
-.content :nth-child(n) {
+/*.content :nth-child(n) {
   margin: 3px;
 }
+*/
