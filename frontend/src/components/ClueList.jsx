@@ -1,19 +1,19 @@
-/* import PropTypes from "prop-types"; */
+import clueList from "../data/clue_list.json";
+import Clue from "./Clue";
 
 export default function ClueList() {
+  const clues = clueList.slice(0, 6);
+
   return (
-    <div className="flex h-[440px] w-[264px] flex-col items-center border-2 border-red-500">
-      <div className="mb-[16px] h-[60px] w-[264px] border-2 border-sky-500" />
-      <div className="mb-[16px] h-[60px] w-[264px] border-2 border-sky-500" />
-      <div className="mb-[16px] h-[60px] w-[264px] border-2 border-sky-500" />
-      <div className="mb-[16px] h-[60px] w-[264px] border-2 border-sky-500" />
-      <div className="mb-[16px] h-[60px] w-[264px] border-2 border-sky-500" />
-      <div className="h-[60px] w-[264px] border-2 border-sky-500"> </div>
+    <div className="flex w-fit flex-col gap-4">
+      {clues.map((clue) => (
+        <Clue
+          key={clue.id}
+          src={clue.src}
+          alt={clue.alt}
+          nameClue={clue.nameClue}
+        />
+      ))}
     </div>
   );
 }
-
-/* ClueList.propTypes = {
-    : PropTypes.string.isRequired,
-    : PropTypes.string.isRequired,
-  }; */

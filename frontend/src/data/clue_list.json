@@ -2,55 +2,64 @@
   {
     "id": "1",
     "nameClue": "Gender",
-    "question": "What gender is the character?",
-    "response": "The character is a "
+    "response": "I'm a ",
+    "src": "src/assets/icon/gender.svg",
+    "alt": "gender icon"
   },
   {
     "id": "2",
     "nameClue": "Specie",
-    "question": "What specie of character is that?",
-    "response": "The character is a "
+    "response": "I'm a ",
+    "src": "src/assets/icon/specie.svg",
+    "alt": "specie icon"
   },
   {
     "id": "3",
     "nameClue": "House",
-    "question": "What house is the character from?",
-    "response": "the character is part of the house : "
+    "response": "I belong with ",
+    "src": "src/assets/icon/house.svg",
+    "alt": "houses icon"
   },
   {
     "id": "4",
     "nameClue": "Eye_Color",
-    "question": "What color are the character’s eyes?",
-    "response": "The hair color of the character is : "
+    "response": "My eye are ",
+    "src": "src/assets/icon/eye.svg",
+    "alt": "eye icon"
   },
   {
     "id": "5",
     "nameClue": "Hair_Color",
-    "question": "What color is the character’s hair?",
-    "response": "The hair color of the character is : "
+    "response": "My hair are ",
+    "src": "src/assets/icon/hair.svg",
+    "alt": "hair icon"
   },
   {
     "id": "6",
     "nameClue": "Status",
-    "question": "What is the status of the character?",
-    "response": "The status of the character is : "
+    "response": "At Hogwart I'm a ",
+    "src": "src/assets/icon/status.svg",
+    "alt": "status icon"
   },
   {
     "id": "7",
     "nameClue": "Actor",
-    "question": "what is the name of the actor in my character?",
-    "response": "The actor who embodies the character is : "
+    "response": "The actor who played me was ",
+    "src": "src/assets/icon/actor.svg",
+    "alt": "sctor icon"
   },
   {
     "id": "8",
     "nameClue": "Patronus",
-    "question": "What is the animal protector of my character?",
-    "response": "The character’s protective animal is : "
+    "response": "My patronus is ",
+    "src": "src/assets/icon/patronus.png",
+    "alt": "patronus icon"
   },
   {
     "id": "9",
     "nameClue": "Wand",
-    "question": "What’s the name of my character’s magic wand?",
-    "response": "The character’s magic wand is : "
+    "response": "My wand is ",
+    "src": "src/assets/icon/wand.svg",
+    "alt": "wand icon"
   }
 ]
