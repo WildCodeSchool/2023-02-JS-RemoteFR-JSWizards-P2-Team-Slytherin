@@ -9,10 +9,6 @@ const displayTime = (time) => {
     minutes.toString().padStart(2, "0"),
     seconds.toString().padStart(2, "0"),
   ];
-  // return {
-  //   this.minutes = minutes.toString().padStart(2, "0"),
-  //   this.seconds = minutes.toString().padStart(2, "0"),
-  // }
 };
 
 export default displayTime;
