@@ -29,7 +29,7 @@ module.exports = {
 
       fontFamily: {
         cinzel: ["Cinzel Decorative", "cursive"],
-        baskerville: ["Libre Baskerville", "serif"],
+        ibarra: ["Ibarra Real Nova", "serif"],
       },
 
       fontSize: {
