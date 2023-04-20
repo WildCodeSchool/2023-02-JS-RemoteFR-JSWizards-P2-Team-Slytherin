@@ -22,14 +22,14 @@
   },
   {
     "id": "4",
-    "nameClue": "Eye_Color",
+    "nameClue": "Eye Color",
     "response": "My eye are ",
     "src": "src/assets/icon/eye.svg",
     "alt": "eye icon"
   },
   {
     "id": "5",
-    "nameClue": "Hair_Color",
+    "nameClue": "Hair Color",
     "response": "My hair are ",
     "src": "src/assets/icon/hair.svg",
     "alt": "hair icon"

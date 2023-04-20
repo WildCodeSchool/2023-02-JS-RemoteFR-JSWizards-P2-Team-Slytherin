@@ -7,7 +7,7 @@ import "./App.css";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App min-h-screen">
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="game" element={<GamePage />} />

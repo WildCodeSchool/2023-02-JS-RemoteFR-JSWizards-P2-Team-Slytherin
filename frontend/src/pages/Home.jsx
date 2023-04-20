@@ -1,11 +1,11 @@
-import Layout from "@components/Layout";
+import Layout from "../components/Layout";
 
 export default function Home() {
   return (
     <Layout>
-      <header className="App-header">
+      <div>
         <h1>Who Wiz it?</h1>
-      </header>
+      </div>
     </Layout>
   );
 }
