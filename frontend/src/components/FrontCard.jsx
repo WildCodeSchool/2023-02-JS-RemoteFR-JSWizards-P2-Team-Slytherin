@@ -14,13 +14,13 @@ export default function FrontCard({ name, image }) {
         className="absolute top-1/2 h-[76px] w-[61px] -translate-y-2/4 rounded-full object-cover"
       />
       <img
-        src="src/assets/img/card-front-decoration.png"
+        src="./src/assets/img/card-front-decoration.png"
         alt="golden frame decoration"
         className="absolute top-1/2 h-[93px] w-[81px] -translate-y-2/4"
       />
       <button type="button" className="absolute bottom-2">
         <img
-          src="src/assets/img/card-front-validate.png"
+          src="./src/assets/img/card-front-validate.png"
           alt="golden snitch"
           className="h-[32px] w-[32px]"
         />
