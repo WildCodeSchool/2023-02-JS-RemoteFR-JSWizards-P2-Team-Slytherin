@@ -5,7 +5,7 @@ export default function CardBoard() {
   return (
     <div>
       <div className="flex">
-        <div className="cardcontainer flex justify-center items-center flex-col text-center w-fit h-[510px] gap-[5px] ">
+        <div className="cardcontainer flex h-[510px] w-fit flex-col items-center justify-center gap-[5px] bg-transparent text-center ">
           <div className="content flex flex-wrap gap-[5px] ">
             {wizards.slice(0, 7).map((wizard) => (
               <FrontCard

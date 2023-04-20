@@ -1,14 +1,27 @@
 import Layout from "@components/Layout";
-import FrontCard from "@components/FrontCard";
-import BackCard from "@components/BackCard";
-import wizards from "../data/data.json";
+import SortingHat from "@components/SortingHat";
+import CardBoard from "../components/CardBoard";
+import Score from "../components/Score";
+import Timer from "../components/Timer";
 
 function GamePage() {
-  const wizard = wizards[4];
   return (
     <Layout>
-      <FrontCard name={wizard.name} image={wizard.image} />
-      <BackCard />
+      <div
+        className="Timescore"
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          gap: "40px",
+        }}
+      >
+        <Timer />
+        <Score />
+      </div>
+      <SortingHat />
+      <div style={{ marginLeft: "40px" }}>
+        <CardBoard />
+      </div>
     </Layout>
   );
 }
