@@ -1,5 +1,4 @@
 import FrontCard from "./FrontCard";
-import "./CardBoard.css";
 import wizards from "../data/data.json";
 
 export default function CardBoard() {
