@@ -1,0 +1,65 @@
+[
+  {
+    "id": "1",
+    "nameClue": "Gender",
+    "response": "I'm a ",
+    "src": "src/assets/icon/gender.svg",
+    "alt": "gender icon"
+  },
+  {
+    "id": "2",
+    "nameClue": "Specie",
+    "response": "I'm a ",
+    "src": "src/assets/icon/specie.svg",
+    "alt": "specie icon"
+  },
+  {
+    "id": "3",
+    "nameClue": "House",
+    "response": "I belong with ",
+    "src": "src/assets/icon/house.svg",
+    "alt": "houses icon"
+  },
+  {
+    "id": "4",
+    "nameClue": "Eye_Color",
+    "response": "My eye are ",
+    "src": "src/assets/icon/eye.svg",
+    "alt": "eye icon"
+  },
+  {
+    "id": "5",
+    "nameClue": "Hair_Color",
+    "response": "My hair are ",
+    "src": "src/assets/icon/hair.svg",
+    "alt": "hair icon"
+  },
+  {
+    "id": "6",
+    "nameClue": "Status",
+    "response": "At Hogwart I'm a ",
+    "src": "src/assets/icon/status.svg",
+    "alt": "status icon"
+  },
+  {
+    "id": "7",
+    "nameClue": "Actor",
+    "response": "The actor who played me was ",
+    "src": "src/assets/icon/actor.svg",
+    "alt": "sctor icon"
+  },
+  {
+    "id": "8",
+    "nameClue": "Patronus",
+    "response": "My patronus is ",
+    "src": "src/assets/icon/patronus.png",
+    "alt": "patronus icon"
+  },
+  {
+    "id": "9",
+    "nameClue": "Wand",
+    "response": "My wand is ",
+    "src": "src/assets/icon/wand.svg",
+    "alt": "wand icon"
+  }
+]
