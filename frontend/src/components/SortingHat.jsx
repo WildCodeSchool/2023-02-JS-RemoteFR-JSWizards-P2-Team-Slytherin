@@ -1,8 +1,8 @@
 const SortingHat = () => {
   return (
-    <div>
+    <div className="flex items-center">
       <img src="src/assets/img/sorting-hat.png" />;
-      <h2>Hello young Wizards, welcome to Hogwart !</h2>
+      <h2 className="sorting-hat">Hello young Wizards, welcome to Hogwart !</h2>
     </div>
   );
 };
