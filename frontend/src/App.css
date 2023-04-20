@@ -26,10 +26,18 @@
   h1 {
     @apply font-cinzel text-4xl text-neutral-lightest;
   }
+
+  .App {
+    background-image: url("src/assets/img/background-game-screen-desktop.png");
+    height: 100vh;
+  }
 }
 
 /* Custom CSS rules for components (.card, .btn, ...) */
 @layer components {
+  button {
+    cursor: pointer;
+  }
 }
 
 /* Custom CSS rules for utilities (.layout, .shadow, ...) */
