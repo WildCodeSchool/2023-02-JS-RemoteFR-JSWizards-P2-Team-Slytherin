@@ -1,6 +1,45 @@
-@import url("https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* ______________________________________________________________________ *\
+   Import Local Fonts
+\* ______________________________________________________________________ */
+@font-face {
+  font-family: "Cinzel Decorative";
+  font-weight: 700;
+  src: url("./assets/fonts/cinzelDecorative-bold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Ibarra Real Nova";
+  font-weight: 400;
+  src: url("./assets/fonts/ibarraRealNova-regular.ttf") format("truetype");
+}
+
+/* ______________________________________________________________________ *\
+   Custom CSS rules
+\* ______________________________________________________________________ */
+
+/* Custom CSS rules for base HTML elements */
+@layer base {
+  h1 {
+    @apply font-cinzel text-4xl text-neutral-lightest;
+  }
+
+  .App {
+    background-image: url("src/assets/img/background-game-screen-desktop.png");
+    height: 100vh;
+  }
+}
+
+/* Custom CSS rules for components (.card, .btn, ...) */
+@layer components {
+  button {
+    cursor: pointer;
+  }
+}
+
+/* Custom CSS rules for utilities (.layout, .shadow, ...) */
+@layer utilities {
+}
