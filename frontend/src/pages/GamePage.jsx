@@ -10,21 +10,23 @@ function GamePage() {
   const gameDuration = 60;
   const scoreStart = 1000;
   return (
-    <Layout>
-      <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
-        <div className="relative -top-7 mx-auto flex justify-center gap-16">
-          <Timer gameTime={gameDuration} />
-          <Score startingScore={scoreStart} />
+    <div className="bg-[url('src/assets/img/background-game-screen-desktop.png')] bg-cover">
+      <Layout>
+        <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
+          <div className="relative -top-7 mx-auto flex justify-center gap-16">
+            <Timer gameTime={gameDuration} />
+            <Score startingScore={scoreStart} />
+          </div>
+          {/* <div className="grid grid-cols-[1fr_minmax(auto,300px)] grid-rows-[auto_1fr] place-items-center"> */}
+          <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
+            <SortingHat />
+            <BackCard />
+            <CardBoard />
+            <ClueList />
+          </div>
         </div>
-        {/* <div className="grid grid-cols-[1fr_minmax(auto,300px)] grid-rows-[auto_1fr] place-items-center"> */}
-        <div className="lace-items-center relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
-          <SortingHat />
-          <BackCard />
-          <CardBoard />
-          <ClueList />
-        </div>
-      </div>
-    </Layout>
+      </Layout>
+    </div>
   );
 }
 
