@@ -23,7 +23,7 @@ export default function Timer({ gameTime }) {
   }, [timer]);
 
   return (
-    <div className="flex w-fit items-center gap-x-3 rounded-full border-2 border-neutral-light px-8 py-2">
+    <div className="flex w-fit min-w-[180px] items-center gap-x-3 rounded-full border-2 border-neutral-light px-8 py-2">
       <div className="img-wrapper">
         <svg
           width="40"
