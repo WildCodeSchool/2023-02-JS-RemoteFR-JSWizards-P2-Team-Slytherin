@@ -7,7 +7,7 @@ export default function FrontCard({ name, image }) {
 
   return (
     <div className="relative flex h-[160px] w-[112px] flex-col items-center rounded-[6px] bg-[url('src/assets/img/card-front-background.png')] bg-cover py-2">
-      <span className="font-baskerville text-base">{nameShort}</span>
+      <span className="font-ibarra text-base">{nameShort}</span>
       <img
         src={image}
         alt={nameShort}

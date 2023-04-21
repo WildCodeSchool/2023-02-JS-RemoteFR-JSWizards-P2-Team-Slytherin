@@ -3,10 +3,10 @@ import NavBar from "./NavBar";
 
 export default function Layout({ children }) {
   return (
-    <>
+    <div className="layout grid min-h-screen grid-rows-[auto_1fr]">
       <NavBar />
       <main>{children}</main>
-    </>
+    </div>
   );
 }
 
