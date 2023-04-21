@@ -3,7 +3,6 @@ function SortingHat() {
     <div className="relative">
       <div className="flex items-center p-4">
         <img
-          // className="hat relative ml-4 h-72"
           className="absolute left-0 top-0 h-[146px] w-[198px]"
           src="src/assets/img/sorting-hat.png"
           alt="Sorting hat"
