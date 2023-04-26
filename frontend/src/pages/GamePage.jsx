@@ -12,7 +12,7 @@ function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
   return (
-    <div className="bg-[url('src/assets/img/background-game-screen-desktop.png')] bg-cover">
+    <div className="bg-[url('./assets/img/background-game-screen-desktop.png')] bg-cover">
       <Layout>
         <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
           <div className="relative -top-7 mx-auto flex justify-center gap-16">
