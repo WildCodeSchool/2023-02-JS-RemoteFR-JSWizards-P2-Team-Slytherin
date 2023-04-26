@@ -1,35 +1,36 @@
-import FrontCard from "./FrontCard";
-import wizards from "../data/data.json";
+import PropTypes from "prop-types";
 
-export default function CardBoard() {
+import FrontCard from "./FrontCard";
+
+export default function CardBoard({ characters }) {
   return (
     <div>
       <div className="flex">
         <div className="cardcontainer flex h-[510px] w-fit flex-col items-center justify-center gap-[5px] bg-transparent text-center ">
           <div className="content flex flex-wrap gap-[5px] ">
-            {wizards.slice(0, 7).map((wizard) => (
+            {characters.slice(0, 7).map((character) => (
               <FrontCard
-                key={wizard.id}
-                name={wizard.name}
-                image={wizard.image}
+                key={character.id}
+                name={character.name}
+                image={character.image}
               />
             ))}
           </div>
           <div className="content flex flex-wrap gap-[5px]">
-            {wizards.slice(8, 14).map((wizard) => (
+            {characters.slice(8, 14).map((character) => (
               <FrontCard
-                key={wizard.id}
-                name={wizard.name}
-                image={wizard.image}
+                key={character.id}
+                name={character.name}
+                image={character.image}
               />
             ))}
           </div>
           <div className="content flex flex-wrap gap-[5px]">
-            {wizards.slice(15, 22).map((wizard) => (
+            {characters.slice(15, 22).map((character) => (
               <FrontCard
-                key={wizard.id}
-                name={wizard.name}
-                image={wizard.image}
+                key={character.id}
+                name={character.name}
+                image={character.image}
               />
             ))}
           </div>
@@ -38,3 +39,13 @@ export default function CardBoard() {
     </div>
   );
 }
+
+CardBoard.propTypes = {
+  characters: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
