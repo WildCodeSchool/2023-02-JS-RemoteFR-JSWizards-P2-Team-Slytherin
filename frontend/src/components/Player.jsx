@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function Player() {
   const [fullName, setFullName] = useState("");
@@ -32,6 +33,12 @@ export default function Player() {
             <option value="Slytherin">Slytherin</option>
           </select>
         </label>
+        <button type="button">
+          <Link to="/rules">RULES</Link>
+        </button>
+        <button type="button">
+          <Link to="/game">PLAY NOW</Link>
+        </button>
       </form>
     </div>
   );

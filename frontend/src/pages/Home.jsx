@@ -8,8 +8,8 @@ export default function Home() {
         <div>
           <h1>Who Wiz it?</h1>
         </div>
+        <Player />
       </Layout>
-      <Player />
     </div>
   );
 }
