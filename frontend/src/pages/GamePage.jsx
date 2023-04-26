@@ -8,11 +8,15 @@ import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
 import filterCharacters from "../helper/filterCharacters";
+import randomCards from "../helper/randomCards";
 
 function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
   const filteredCharacters = filterCharacters(characters, "image");
+
+  const test = randomCards(25);
+  console.log(test);
 
   return (
     <div className="bg-[url('src/assets/img/background-game-screen-desktop.png')] bg-cover">

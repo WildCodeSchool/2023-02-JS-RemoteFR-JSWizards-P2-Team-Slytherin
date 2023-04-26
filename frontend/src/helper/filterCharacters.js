@@ -1,5 +1,5 @@
 /**
- * @desc create a nex array with the characters who have image
+ * @desc create a new array with the characters who have image
  */
 
 const filterCharacters = (characters, filter) => {
