@@ -21,13 +21,10 @@ function App() {
 
     axios
       .get(API, { signal })
-      .then((response) =>
-        setCharacters(response.data.filter((wizards) => wizards.image !== ""))
-      )
+      .then((response) => setCharacters(response.data))
       .catch((error) => console.error(`Download error: ${error.message}`))
       .finally(() => setLoading(false));
 
-    console.log(characters);
     // cancel current API request on component unmount
     return function cleanup() {
       controller.abort();
