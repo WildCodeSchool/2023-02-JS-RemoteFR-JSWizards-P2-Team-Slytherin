@@ -5,10 +5,12 @@ import Score from "../components/Score";
 import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
+import axios from "axios";
 
 function GamePage() {
   const gameDuration = 60;
   const scoreStart = 1000;
+
   return (
     <div className="bg-[url('src/assets/img/background-game-screen-desktop.png')] bg-cover">
       <Layout>
