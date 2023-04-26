@@ -14,9 +14,10 @@ function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
   const filteredCharacters = filterCharacters(characters, "image");
-
-  const test = randomCards(25);
-  console.log(test);
+  const randomDeck = randomCards(filteredCharacters);
+  const indexHatCard = Math.floor(Math.random() * randomDeck.length);
+  const hatCard = randomDeck[indexHatCard];
+  console.log(hatCard);
 
   return (
     <div className="bg-[url('src/assets/img/background-game-screen-desktop.png')] bg-cover">
@@ -30,7 +31,7 @@ function GamePage({ characters }) {
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
             <SortingHat />
             <BackCard />
-            <CardBoard characters={filteredCharacters} />
+            <CardBoard characters={randomDeck} />
             <ClueList />
           </div>
         </div>

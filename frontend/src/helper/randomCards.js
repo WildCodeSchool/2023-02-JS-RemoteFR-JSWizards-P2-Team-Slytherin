@@ -2,17 +2,8 @@
  * @desc take 20 random characters to make the deck
  */
 
-const randomCards = (max) => {
-  const arr = [];
-  for (let i = 0; i < 20; i++) {
-    const x = Math.floor(Math.random() * max);
-    if (arr.includes(x) === true) {
-      i = i - 1;
-    } else {
-      arr.push(x);
-    }
-  }
-  return arr;
+const randomCards = (array) => {
+  return array.sort((a, b) => 0.5 - Math.random());
 };
 
 export default randomCards;
