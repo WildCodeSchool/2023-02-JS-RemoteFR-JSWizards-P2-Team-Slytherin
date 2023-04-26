@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import Layout from "../components/Layout";
 import SortingHat from "../components/SortingHat";
 import CardBoard from "../components/CardBoard";
@@ -6,7 +8,7 @@ import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
 
-function GamePage() {
+function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
   return (
@@ -17,11 +19,11 @@ function GamePage() {
             <Timer gameTime={gameDuration} />
             <Score startingScore={scoreStart} />
           </div>
-          {/* <div className="grid grid-cols-[1fr_minmax(auto,300px)] grid-rows-[auto_1fr] place-items-center"> */}
+
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
             <SortingHat />
             <BackCard />
-            <CardBoard />
+            <CardBoard characters={characters} />
             <ClueList />
           </div>
         </div>
@@ -31,3 +33,13 @@ function GamePage() {
 }
 
 export default GamePage;
+
+GamePage.propTypes = {
+  characters: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
