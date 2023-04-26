@@ -1,10 +1,13 @@
 import { Routes, Route } from "react-router-dom";
 import { useState, useEffect } from "react";
+
 import axios from "axios";
+
 import Home from "./pages/Home";
 import GamePage from "./pages/GamePage";
 import RulesPage from "./pages/RulesPage";
 import ScorePage from "./pages/ScorePage";
+
 import "./App.css";
 
 function App() {
