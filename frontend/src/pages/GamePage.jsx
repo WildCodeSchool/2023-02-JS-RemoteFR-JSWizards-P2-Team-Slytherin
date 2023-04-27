@@ -8,16 +8,13 @@ import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
 import filterCharacters from "../helper/filterCharacters";
-import randomCards from "../helper/randomCards";
+import hatCard from "../helper/hatCard";
 
 function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
   const filteredCharacters = filterCharacters(characters, "image");
-  const randomDeck = randomCards(filteredCharacters);
-
-  const indexHatCard = Math.floor(Math.random() * randomDeck.length);
-  const hatCard = randomDeck[indexHatCard];
+  const hatCardPick = hatCard(filteredCharacters);
 
   return (
     <div className="bg-[url('src/assets/img/background-game-screen-desktop.png')] bg-cover">
@@ -31,7 +28,7 @@ function GamePage({ characters }) {
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
             <SortingHat />
             <BackCard />
-            <CardBoard characters={randomDeck} />
+            <CardBoard characters={filteredCharacters} />
             <ClueList />
           </div>
         </div>
