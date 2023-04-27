@@ -8,9 +8,9 @@ export default function Card({ name, image }) {
   const [showFront, setShowFront] = useState(true);
 
   const flipCardOnClick = (e) => {
-    setShowFront((prev) => {
-      return !e.target.className.includes("btn") ? !prev : prev;
-    });
+    if (!e.target.className.includes("btn")) {
+      setShowFront((prev) => !prev);
+    }
   };
 
   return (
