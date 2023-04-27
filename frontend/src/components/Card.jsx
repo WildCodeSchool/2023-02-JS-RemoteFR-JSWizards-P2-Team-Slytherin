@@ -9,14 +9,13 @@ export default function Card({ name, image }) {
 
   const flipCardOnClick = (e) => {
     setShowFront((prev) => {
-      console.log(e.target.className);
       return !e.target.className.includes("btn") ? !prev : prev;
     });
   };
 
   return (
     <div
-      className="card-container h-[160px] w-[112px] cursor-pointer duration-300 ease-in-out perspective hover:-translate-y-1 hover:drop-shadow-xl"
+      className="card-container h-[160px] w-[112px] cursor-[url('./assets/icon/flip-cursor.svg'),_pointer] duration-300 ease-in-out perspective hover:-translate-y-1 hover:drop-shadow-xl"
       onClick={flipCardOnClick}
     >
       <div
