@@ -15,9 +15,9 @@ function GamePage({ characters }) {
   const scoreStart = 1000;
   const filteredCharacters = filterCharacters(characters, "image");
   const randomDeck = randomCards(filteredCharacters);
+
   const indexHatCard = Math.floor(Math.random() * randomDeck.length);
   const hatCard = randomDeck[indexHatCard];
-  console.log(hatCard);
 
   return (
     <div className="bg-[url('src/assets/img/background-game-screen-desktop.png')] bg-cover">
