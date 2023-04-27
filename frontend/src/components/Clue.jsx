@@ -1,7 +1,17 @@
 import PropTypes from "prop-types";
 
-export default function Clue({ src, alt, nameClue }) {
-  const handleButtonClick = () => {};
+export default function Clue({
+  src,
+  alt,
+  label,
+  category,
+  response,
+  addMessage,
+}) {
+  const handleButtonClick = () => {
+    const newMessage = { category, response };
+    addMessage(newMessage);
+  };
 
   return (
     <div>
@@ -14,7 +24,7 @@ export default function Clue({ src, alt, nameClue }) {
           <img src={src} alt={alt} />
         </div>
         <span className="font-ibarra text-lg text-neutral-lightest">
-          {nameClue}
+          {label}
         </span>
       </button>
     </div>
@@ -24,5 +34,8 @@ export default function Clue({ src, alt, nameClue }) {
 Clue.propTypes = {
   src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  nameClue: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  response: PropTypes.string.isRequired,
+  addMessage: PropTypes.func.isRequired,
 };

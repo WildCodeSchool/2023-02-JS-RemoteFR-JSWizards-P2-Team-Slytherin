@@ -1,4 +1,7 @@
-function SortingHat() {
+import PropTypes from "prop-types";
+import formatMessage from "../helper/FormatMessage";
+
+export default function SortingHat({ message, hatCardPick }) {
   return (
     <div className="relative">
       <div className="flex items-center p-4">
@@ -9,7 +12,7 @@ function SortingHat() {
         />
         <div className="flex h-[134px] w-[720px] items-center rounded-3xl bg-neutral-lightest px-2.5 pr-2">
           <h2 className="grow text-center font-ibarra text-lg text-neutral-dark">
-            "Hello Dobby! Click on a hint to begin..."
+            {formatMessage(message, hatCardPick)}
           </h2>
         </div>
       </div>
@@ -17,4 +20,14 @@ function SortingHat() {
   );
 }
 
-export default SortingHat;
+SortingHat.propTypes = {
+  message: PropTypes.shape({
+    category: PropTypes.string.isRequired,
+    response: PropTypes.string.isRequired,
+  }).isRequired,
+  hatCardPick: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+};

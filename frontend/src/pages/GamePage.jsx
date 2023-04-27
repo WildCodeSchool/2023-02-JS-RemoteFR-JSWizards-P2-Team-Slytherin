@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import Layout from "../components/Layout";
 import SortingHat from "../components/SortingHat";
 import CardBoard from "../components/CardBoard";
@@ -6,9 +8,25 @@ import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
 
-function GamePage() {
+// TEMPORARY TO BE RENOVED >> TEST ONLY
+import wizards from "../data/data.json";
+
+export default function GamePage() {
   const gameDuration = 60;
   const scoreStart = 1000;
+
+  const [message, setMessage] = useState({
+    category: "",
+    response: "Hello Dobby! Click on a hint to begin...",
+  });
+
+  const addMessage = (newMessage) => {
+    setMessage(newMessage);
+  };
+
+  // TEMPORARYTO BE RENOVED => TEST ONLY
+  const hatCardPick = wizards[4];
+
   return (
     <div className="bg-[url('src/assets/img/background-game-screen-desktop.png')] bg-cover">
       <Layout>
@@ -19,15 +37,13 @@ function GamePage() {
           </div>
 
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
-            <SortingHat />
+            <SortingHat message={message} hatCardPick={hatCardPick} />
             <BackCard />
             <CardBoard />
-            <ClueList />
+            <ClueList addMessage={addMessage} />
           </div>
         </div>
       </Layout>
     </div>
   );
 }
-
-export default GamePage;
