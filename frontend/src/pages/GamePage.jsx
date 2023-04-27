@@ -8,13 +8,13 @@ import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
 import filterCharacters from "../helper/filterCharacters";
-import hatCard from "../helper/hatCard";
+// import hatCard from "../helper/hatCard"; wil be used in a futur composant
 
 function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
   const filteredCharacters = filterCharacters(characters, "image");
-  const hatCardPick = hatCard(filteredCharacters);
+  // const hatCardPick = hatCard(filteredCharacters); wil be used in a futur composant
 
   return (
     <div className="bg-[url('./assets/img/background-game-screen-desktop.png')] bg-cover">
