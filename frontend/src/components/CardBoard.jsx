@@ -17,7 +17,7 @@ export default function CardBoard({ characters }) {
             ))}
           </div>
           <div className="content flex flex-wrap gap-[5px]">
-            {characters.slice(8, 14).map((character) => (
+            {characters.slice(7, 13).map((character) => (
               <FrontCard
                 key={character.id}
                 name={character.name}
@@ -26,7 +26,7 @@ export default function CardBoard({ characters }) {
             ))}
           </div>
           <div className="content flex flex-wrap gap-[5px]">
-            {characters.slice(15, 22).map((character) => (
+            {characters.slice(13, 21).map((character) => (
               <FrontCard
                 key={character.id}
                 name={character.name}
