@@ -9,8 +9,7 @@ function SortingHat() {
         />
         <div className="flex h-[134px] w-[720px] items-center rounded-3xl bg-neutral-lightest px-2.5 pr-2">
           <h2 className="grow text-center font-ibarra text-lg text-neutral-dark">
-            Hello Dobby! <br />
-            Click on a hint to begin...
+            "Hello Dobby! Click on a hint to begin..."
           </h2>
         </div>
       </div>

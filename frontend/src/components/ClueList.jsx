@@ -12,6 +12,7 @@ export default function ClueList() {
           src={clue.src}
           alt={clue.alt}
           nameClue={clue.nameClue}
+          response={clue.response}
         />
       ))}
     </div>

@@ -1,7 +1,20 @@
+import React, { useState, useEffect } from "react";
 import FrontCard from "./FrontCard";
 import wizards from "../data/data.json";
 
 export default function CardBoard() {
+  const [selectedWizard, setSelectedWizard] = useState(null);
+
+  useEffect(() => {
+    const visibleWizards = wizards
+      .slice(0, 7)
+      .concat(wizards.slice(8, 14))
+      .concat(wizards.slice(15, 22));
+    const randomIndex = Math.floor(Math.random() * visibleWizards.length);
+    const randomWizard = visibleWizards[randomIndex];
+    setSelectedWizard(randomWizard);
+  }, []);
+
   return (
     <div>
       <div className="flex">
@@ -35,6 +48,9 @@ export default function CardBoard() {
           </div>
         </div>
       </div>
+      {selectedWizard && (
+        <p>Wizard sélectionné par le choixpeau : {selectedWizard.name}</p>
+      )}
     </div>
   );
 }
