@@ -4,11 +4,12 @@ import PropTypes from "prop-types";
 import BackCard from "./BackCard";
 import FrontCard from "./FrontCard";
 
-export default function Card({ character }) {
+export default function Card({ name, image }) {
   const [showFront, setShowFront] = useState(true);
 
   const flipCardOnClick = (e) => {
     setShowFront((prev) => {
+      console.log(e.target.className);
       return !e.target.className.includes("btn") ? !prev : prev;
     });
   };
@@ -24,7 +25,7 @@ export default function Card({ character }) {
         }`}
       >
         <div className="card-front absolute my-rotate-180 backface-hidden">
-          <FrontCard name={character.name} image={character.image} />
+          <FrontCard name={name} image={image} />
         </div>
         <div className="card-back absolute backface-hidden">
           <BackCard />
@@ -35,8 +36,6 @@ export default function Card({ character }) {
 }
 
 Card.propTypes = {
-  character: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
+  name: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
 };
