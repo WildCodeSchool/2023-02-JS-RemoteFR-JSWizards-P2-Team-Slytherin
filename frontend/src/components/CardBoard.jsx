@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-import FrontCard from "./FrontCard";
+import Card from "./Card";
 
 export default function CardBoard({ characters }) {
   return (
@@ -8,7 +8,7 @@ export default function CardBoard({ characters }) {
       <div className="cardcontainer flex h-[510px] w-fit flex-col items-center justify-center gap-[5px] bg-transparent text-center ">
         <div className="content flex flex-wrap gap-[5px] ">
           {characters.slice(0, 7).map((character) => (
-            <FrontCard
+            <Card
               key={character.id}
               name={character.name}
               image={character.image}
@@ -17,7 +17,7 @@ export default function CardBoard({ characters }) {
         </div>
         <div className="content flex flex-wrap gap-[5px]">
           {characters.slice(7, 13).map((character) => (
-            <FrontCard
+            <Card
               key={character.id}
               name={character.name}
               image={character.image}
@@ -26,14 +26,13 @@ export default function CardBoard({ characters }) {
         </div>
         <div className="content flex flex-wrap gap-[5px]">
           {characters.slice(13, 21).map((character) => (
-            <FrontCard
+            <Card
               key={character.id}
               name={character.name}
               image={character.image}
             />
           ))}
-        </div>
-      </div>
+         </div>
     </div>
   );
 }
