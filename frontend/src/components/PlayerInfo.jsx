@@ -1,9 +1,17 @@
-import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function PlayerInfo() {
-  const handleChangeFullName = (e) => setFullName(e.target.value);
-  const handleSelectHouse = (e) => setHouseChoice(e.target.value);
+import PropTypes from "prop-types";
+
+export default function PlayerInfo({ playerInfo, setPlayerInfo }) {
+  const handleNameChange = (e) => {
+    const newName = { name: e.target.value };
+    setPlayerInfo((user) => ({ ...user, ...newName }));
+  };
+
+  const handleChangeHouse = (e) => {
+    const newHouse = { house: e.target.value };
+    setPlayerInfo((user) => ({ ...user, ...newHouse }));
+  };
 
   return (
     <form className="flex w-[398px] flex-col gap-[48px]">
@@ -15,16 +23,16 @@ export default function PlayerInfo() {
             className="h-[52px] w-[400px] rounded-full bg-neutral-lightest/75 px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
             id="fullName"
             type="text"
-            value={fullName}
-            onChange={handleChangeFullName}
+            value={playerInfo.name}
+            onChange={handleNameChange}
           />
         </label>
         <label className="flex flex-col font-ibarra text-lg text-neutral-lightest ">
           Wizard House
           <select
             className="h-[52px] w-[400px] cursor-pointer appearance-none rounded-full bg-neutral-lightest/75 bg-[url('./assets/icon/dropdown.svg')] bg-[center_right_2rem] bg-no-repeat px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
-            value={houseChoice}
-            onChange={handleSelectHouse}
+            value={playerInfo.house}
+            onChange={handleChangeHouse}
           >
             <option value="">Select your House...</option>
             <option value="Gryffindor">Gryffindor</option>
@@ -51,3 +59,11 @@ export default function PlayerInfo() {
     </form>
   );
 }
+
+PlayerInfo.propTypes = {
+  playerInfo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    house: PropTypes.string.isRequired,
+  }).isRequired,
+  setPlayerInfo: PropTypes.func.isRequired,
+};

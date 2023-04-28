@@ -12,7 +12,7 @@ import ClueList from "../components/ClueList";
 import filterCharacters from "../helper/filterCharacters";
 import hatCard from "../helper/hatCard";
 
-export default function GamePage({ characters }) {
+export default function GamePage({ characters, playerInfo }) {
   const gameDuration = 60;
   const scoreStart = 1000;
 
@@ -21,7 +21,7 @@ export default function GamePage({ characters }) {
 
   const [message, setMessage] = useState({
     category: "",
-    response: "Hello Dobby! Click on a hint to begin...",
+    response: `Hello ${playerInfo.name} from ${playerInfo.house}! Click on a hint to begin...`,
   });
 
   const addMessage = (newMessage) => {
@@ -37,7 +37,11 @@ export default function GamePage({ characters }) {
             <Score startingScore={scoreStart} />
           </div>
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
-            <SortingHat message={message} hatCardPick={hatCardPick} />
+            <SortingHat
+              message={message}
+              hatCardPick={hatCardPick}
+              playerInfo={playerInfo}
+            />
             <BackCard />
             <CardBoard characters={filteredCharacters} />
             <ClueList addMessage={addMessage} />
@@ -56,4 +60,8 @@ GamePage.propTypes = {
       image: PropTypes.string.isRequired,
     })
   ).isRequired,
+  playerInfo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    house: PropTypes.string.isRequired,
+  }).isRequired,
 };
