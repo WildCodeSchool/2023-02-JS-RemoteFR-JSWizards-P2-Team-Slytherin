@@ -14,7 +14,7 @@ import ModalCountDown from "../components/ModalCountDown";
 function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
-  const timeLeft = 4;
+  const timeLeft = 3;
   const filteredCharacters = filterCharacters(characters, "image");
   // const hatCardPick = hatCard(filteredCharacters); wil be used in a futur composant
 
