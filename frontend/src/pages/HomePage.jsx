@@ -1,7 +1,7 @@
 import Layout from "../components/Layout";
-import Player from "../components/Player";
+import PlayerInfo from "../components/PlayerInfo";
 
-export default function Home() {
+export default function HomePage() {
   return (
     <div className="bg-[url('./assets/img/background-welcome-screen-desktop.png')] bg-cover bg-left-bottom">
       <Layout>
@@ -12,7 +12,7 @@ export default function Home() {
           </h2>
         </div>
         <div className="mr-16 flex justify-end">
-          <Player />
+          <PlayerInfo />
         </div>
       </Layout>
     </div>
