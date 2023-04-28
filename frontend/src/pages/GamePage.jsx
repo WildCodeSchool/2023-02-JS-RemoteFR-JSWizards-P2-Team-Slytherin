@@ -21,7 +21,7 @@ export default function GamePage({ characters, playerInfo }) {
 
   const [message, setMessage] = useState({
     category: "",
-    response: `Hello ${playerInfo.name} from ${playerInfo.house}! Click on a hint to begin...`,
+    response: `Hello ${playerInfo.name} from ${playerInfo.house}! \n Click on a hint to begin...`,
   });
 
   const addMessage = (newMessage) => {
