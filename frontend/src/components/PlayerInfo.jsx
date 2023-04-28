@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function PlayerInfo() {
-  const [fullName, setFullName] = useState("");
-  const [houseChoice, setHouseChoice] = useState();
-
   const handleChangeFullName = (e) => setFullName(e.target.value);
   const handleSelectHouse = (e) => setHouseChoice(e.target.value);
 
@@ -25,7 +22,7 @@ export default function PlayerInfo() {
         <label className="flex flex-col font-ibarra text-lg text-neutral-lightest ">
           Wizard House
           <select
-            className="h-[52px] w-[400px] rounded-full bg-neutral-lightest/75 px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
+            className="h-[52px] w-[400px] cursor-pointer appearance-none rounded-full bg-neutral-lightest/75 bg-[url('./assets/icon/dropdown.svg')] bg-[center_right_2rem] bg-no-repeat px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
             value={houseChoice}
             onChange={handleSelectHouse}
           >
