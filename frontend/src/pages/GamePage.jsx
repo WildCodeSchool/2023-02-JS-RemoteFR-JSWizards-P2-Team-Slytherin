@@ -18,7 +18,6 @@ export default function GamePage({ characters }) {
 
   const [filteredCharacters] = useState(filterCharacters(characters, "image"));
   const [hatCardPick] = useState(hatCard(filteredCharacters));
-  console.log(hatCardPick);
 
   const [message, setMessage] = useState({
     category: "",
