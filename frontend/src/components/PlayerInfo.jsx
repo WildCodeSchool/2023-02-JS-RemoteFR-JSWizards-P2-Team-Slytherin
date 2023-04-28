@@ -30,7 +30,7 @@ export default function PlayerInfo({ playerInfo, setPlayerInfo }) {
         <label className="flex flex-col font-ibarra text-lg text-neutral-lightest ">
           Wizard House
           <select
-            className="h-[52px] w-[400px] cursor-pointer appearance-none rounded-full bg-neutral-lightest/75 bg-[url('./assets/icon/dropdown.svg')] bg-[center_right_2rem] bg-no-repeat px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
+            className="h-[52px] w-[400px] cursor-pointer appearance-none rounded-full bg-neutral-lightest/75 bg-[url('../assets/icon/dropdown.svg')] bg-[center_right_2rem] bg-no-repeat px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
             value={playerInfo.house}
             onChange={handleChangeHouse}
           >

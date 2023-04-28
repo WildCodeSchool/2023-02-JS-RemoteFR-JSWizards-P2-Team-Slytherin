@@ -5,7 +5,7 @@ import PlayerInfo from "../components/PlayerInfo";
 
 export default function HomePage({ playerInfo, setPlayerInfo }) {
   return (
-    <div className="bg-[url('./assets/img/background-welcome-screen-desktop.png')] bg-cover bg-left-bottom">
+    <div className="bg-[url('../assets/img/background-welcome-screen-desktop.png')] bg-cover bg-left-bottom">
       <Layout>
         <div className="mb-[72px] mr-16 mt-[66px] flex flex-col">
           <h1 className="flex justify-end">Who Wiz It?</h1>

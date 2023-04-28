@@ -16,7 +16,7 @@ export default function Card({ name, image }) {
   return (
     <button
       type="button"
-      className="card-container h-[160px] w-[112px] cursor-[url('./assets/icon/flip-cursor.svg'),_pointer] duration-300 ease-in-out perspective hover:-translate-y-1 hover:drop-shadow-xl"
+      className="card-container h-[160px] w-[112px] cursor-[url('../assets/icon/flip-cursor.svg'),_pointer] duration-300 ease-in-out perspective hover:-translate-y-1 hover:drop-shadow-xl"
       onClick={flipCardOnClick}
     >
       <div

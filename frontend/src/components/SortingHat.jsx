@@ -7,7 +7,7 @@ export default function SortingHat({ message, hatCardPick }) {
       <div className="flex w-full items-center p-4">
         <img
           className="absolute -top-8 left-4 h-[200px] w-[198px] scale-x-[-1] scale-y-[1]"
-          src="./assets/gif/sorting-hat.gif"
+          src="../assets/gif/sorting-hat.gif"
           alt="Sorting hat"
         />
         <div className="flex h-[134px] w-[814px] items-center rounded-3xl bg-neutral-lightest px-2.5 pr-2">

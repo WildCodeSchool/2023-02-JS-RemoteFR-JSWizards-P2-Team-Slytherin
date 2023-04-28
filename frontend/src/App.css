@@ -8,13 +8,13 @@
 @font-face {
   font-family: "Cinzel Decorative";
   font-weight: 700;
-  src: url("./assets/fonts/cinzelDecorative-bold.ttf") format("truetype");
+  src: url("../assets/fonts/cinzelDecorative-bold.ttf") format("truetype");
 }
 
 @font-face {
   font-family: "Ibarra Real Nova";
   font-weight: 400;
-  src: url("./assets/fonts/ibarraRealNova-regular.ttf") format("truetype");
+  src: url("../assets/fonts/ibarraRealNova-regular.ttf") format("truetype");
 }
 
 /* ______________________________________________________________________ *\
