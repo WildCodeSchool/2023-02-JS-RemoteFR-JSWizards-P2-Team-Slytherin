@@ -20,7 +20,7 @@ export default function Card({ name, image }) {
       onClick={flipCardOnClick}
     >
       <div
-        className={`card relative h-[160px] w-[112px] duration-1000 preserve-3d ${
+        className={`card relative h-[160px] w-[112px] duration-500 preserve-3d ${
           showFront ? "my-rotate-180" : ""
         }`}
       >
