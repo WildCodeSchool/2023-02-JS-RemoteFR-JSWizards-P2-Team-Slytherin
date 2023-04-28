@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 
-import Home from "./pages/Home";
+import HomePage from "./pages/HomePage";
 import GamePage from "./pages/GamePage";
 import RulesPage from "./pages/RulesPage";
 import ScorePage from "./pages/ScorePage";
@@ -38,7 +38,7 @@ function App() {
     return (
       <div className="App min-h-screen">
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="game" element={<GamePage characters={characters} />} />
           <Route path="rules" element={<RulesPage />} />
           <Route path="score" element={<ScorePage />} />

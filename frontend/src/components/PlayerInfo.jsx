@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-export default function Player() {
+export default function PlayerInfo() {
   const [fullName, setFullName] = useState("");
   const [houseChoice, setHouseChoice] = useState();
 
@@ -9,13 +9,13 @@ export default function Player() {
   const handleSelectHouse = (e) => setHouseChoice(e.target.value);
 
   return (
-    <form className="flex h-[340px] w-[398px] flex-col">
-      <div className="mb-12">
+    <form className="flex w-[398px] flex-col gap-[48px]">
+      <div className="flex flex-col gap-[48px]">
         <label className="font-ibarra text-lg text-neutral-lightest">
           Player Name
           <input
             placeholder=" Enter your Name..."
-            className="mb-12 w-[400px] rounded-[48px] bg-neutral-lightest px-[48px] py-3 text-base text-secondary-dark opacity-75"
+            className="h-[52px] w-[400px] rounded-full bg-neutral-lightest/75 px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
             id="fullName"
             type="text"
             value={fullName}
@@ -25,14 +25,11 @@ export default function Player() {
         <label className="flex flex-col font-ibarra text-lg text-neutral-lightest ">
           Wizard House
           <select
-            className="w-[400px] rounded-[48px] bg-neutral-lightest px-[48px] py-3 text-base text-secondary-dark opacity-75"
+            className="h-[52px] w-[400px] rounded-full bg-neutral-lightest/75 px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
             value={houseChoice}
             onChange={handleSelectHouse}
           >
-            <option className=" text-neutral-lightest" value="">
-              {" "}
-              Select your House...
-            </option>
+            <option value="">Select your House...</option>
             <option value="Gryffindor">Gryffindor</option>
             <option value="Ravenclaw">Ravenclaw</option>
             <option value="Hufflepuff">Hufflepuff</option>
@@ -43,13 +40,13 @@ export default function Player() {
       <div className="flex flex-row justify-between">
         <button
           type="button"
-          className="h-[52px] w-[180px] rounded-[48px] border border-secondary-dark bg-neutral-lightest font-cinzel text-secondary-dark opacity-75"
+          className="w-[180px] rounded-full bg-neutral-lightest/75 py-3 font-cinzel text-base text-secondary-dark hover:bg-secondary-dark/75 hover:text-neutral-lightest"
         >
           <Link to="/rules">Rules</Link>
         </button>
         <button
           type="button"
-          className="h-[52px] w-[180px] rounded-[48px] border border-neutral-lightest bg-secondary-dark font-cinzel text-neutral-lightest opacity-75"
+          className="w-[180px] rounded-full bg-secondary-dark/75 py-3 font-cinzel text-base text-neutral-lightest hover:bg-neutral-lightest/75 hover:text-secondary-dark"
         >
           <Link to="/game">Play now</Link>
         </button>
