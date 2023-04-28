@@ -8,7 +8,7 @@ export default function NavBar() {
           <Link to="/">
             <img
               className="h-[68px] w-[180px]"
-              src="src/assets/logo/logo-desktop.png"
+              src="./assets/logo/logo-desktop.png"
               alt="Return to homepage"
             />
           </Link>
@@ -18,7 +18,7 @@ export default function NavBar() {
             <button type="button">
               <Link to="/rules">
                 <img
-                  src="src/assets/icon/rules.svg"
+                  src="./assets/icon/rules.svg"
                   alt="Game rules"
                   className="h-[30px]"
                 />
@@ -29,7 +29,7 @@ export default function NavBar() {
             <button type="button">
               <Link to="/score">
                 <img
-                  src="src/assets/icon/score.svg"
+                  src="./assets/icon/score.svg"
                   alt="Scores"
                   className="h-[30px]"
                 />
@@ -39,7 +39,7 @@ export default function NavBar() {
           <li>
             <button type="button">
               <img
-                src="src/assets/icon/sound-on.svg"
+                src="./assets/icon/sound-on.svg"
                 alt="Sound on"
                 className="h-[30px]"
               />

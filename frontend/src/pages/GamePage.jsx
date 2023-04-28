@@ -1,4 +1,5 @@
 import { useState } from "react";
+import PropTypes from "prop-types";
 
 import Layout from "../components/Layout";
 import SortingHat from "../components/SortingHat";
@@ -11,7 +12,7 @@ import ClueList from "../components/ClueList";
 // TEMPORARY TO BE RENOVED >> TEST ONLY
 import wizards from "../data/data.json";
 
-export default function GamePage() {
+export default function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
 
@@ -28,7 +29,7 @@ export default function GamePage() {
   const hatCardPick = wizards[4];
 
   return (
-    <div className="bg-[url('src/assets/img/background-game-screen-desktop.png')] bg-cover">
+    <div className="bg-[url('./assets/img/background-game-screen-desktop.png')] bg-cover">
       <Layout>
         <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
           <div className="relative -top-7 mx-auto flex justify-center gap-16">
@@ -39,7 +40,7 @@ export default function GamePage() {
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
             <SortingHat message={message} hatCardPick={hatCardPick} />
             <BackCard />
-            <CardBoard />
+            <CardBoard characters={characters} />
             <ClueList addMessage={addMessage} />
           </div>
         </div>
@@ -47,3 +48,13 @@ export default function GamePage() {
     </div>
   );
 }
+
+GamePage.propTypes = {
+  characters: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    })
+  ).isRequired,
+};
