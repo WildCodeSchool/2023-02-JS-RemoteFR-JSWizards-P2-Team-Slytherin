@@ -33,6 +33,7 @@ export default function CardBoard({ characters }) {
             />
           ))}
          </div>
+      </div>
     </div>
   );
 }
