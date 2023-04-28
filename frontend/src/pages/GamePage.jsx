@@ -19,7 +19,6 @@ function GamePage({ characters }) {
             <Timer gameTime={gameDuration} />
             <Score startingScore={scoreStart} />
           </div>
-          
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
             <SortingHat />
             <BackCard />
