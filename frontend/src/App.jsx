@@ -13,7 +13,10 @@ import "./App.css";
 function App() {
   const API = "https://hp-api.onrender.com/api/characters";
 
-  const [playerInfo, setPlayerInfo] = useState({ name: "", house: "" });
+  const [playerInfo, setPlayerInfo] = useState({
+    name: "",
+    house: "",
+  });
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
 
