@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
 
 import Layout from "../components/Layout";
@@ -8,9 +9,25 @@ import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
 
-function GamePage({ characters }) {
+import filterCharacters from "../helper/filterCharacters";
+import hatCard from "../helper/hatCard";
+
+export default function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
+
+  const [filteredCharacters] = useState(filterCharacters(characters, "image"));
+  const [hatCardPick] = useState(hatCard(filteredCharacters));
+
+  const [message, setMessage] = useState({
+    category: "",
+    response: "Hello Dobby! Click on a hint to begin...",
+  });
+
+  const addMessage = (newMessage) => {
+    setMessage(newMessage);
+  };
+
   return (
     <div className="bg-[url('./assets/img/background-game-screen-desktop.png')] bg-cover">
       <Layout>
@@ -19,20 +36,17 @@ function GamePage({ characters }) {
             <Timer gameTime={gameDuration} />
             <Score startingScore={scoreStart} />
           </div>
-
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
-            <SortingHat />
+            <SortingHat message={message} hatCardPick={hatCardPick} />
             <BackCard />
-            <CardBoard characters={characters} />
-            <ClueList />
+            <CardBoard characters={filteredCharacters} />
+            <ClueList addMessage={addMessage} />
           </div>
         </div>
       </Layout>
     </div>
   );
 }
-
-export default GamePage;
 
 GamePage.propTypes = {
   characters: PropTypes.arrayOf(
