@@ -8,6 +8,8 @@ import Score from "../components/Score";
 import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
+import filterCharacters from "../helper/filterCharacters";
+// import hatCard from "../helper/hatCard"; wil be used in a futur composant
 
 // TEMPORARY TO BE RENOVED >> TEST ONLY
 import wizards from "../data/data.json";
@@ -15,6 +17,8 @@ import wizards from "../data/data.json";
 export default function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
+  const filteredCharacters = filterCharacters(characters, "image");
+  // const hatCardPick = hatCard(filteredCharacters); wil be used in a futur composant
 
   const [message, setMessage] = useState({
     category: "",
@@ -39,7 +43,7 @@ export default function GamePage({ characters }) {
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
             <SortingHat message={message} hatCardPick={hatCardPick} />
             <BackCard />
-            <CardBoard characters={characters} />
+            <CardBoard characters={filteredCharacters} />
             <ClueList addMessage={addMessage} />
           </div>
         </div>
