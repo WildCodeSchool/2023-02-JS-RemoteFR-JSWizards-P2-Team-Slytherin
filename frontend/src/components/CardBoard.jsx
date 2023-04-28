@@ -32,7 +32,7 @@ export default function CardBoard({ characters }) {
               image={character.image}
             />
           ))}
-         </div>
+        </div>
       </div>
     </div>
   );
