@@ -14,44 +14,44 @@ export default function PlayerInfo({ playerInfo, setPlayerInfo }) {
   };
 
   return (
-    <form className="flex w-[398px] flex-col gap-[48px]">
-      <div className="flex flex-col gap-[48px]">
-        <label className="font-ibarra text-lg text-neutral-lightest">
-          Player Name
-          <input
-            placeholder=" Enter your Name..."
-            className="h-[52px] w-[400px] rounded-full bg-neutral-lightest/75 px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
-            id="fullName"
-            type="text"
-            value={playerInfo.name}
-            onChange={handleNameChange}
-          />
-        </label>
-        <label className="flex flex-col font-ibarra text-lg text-neutral-lightest ">
-          Wizard House
-          <select
-            className="h-[52px] w-[400px] cursor-pointer appearance-none rounded-full bg-neutral-lightest/75 bg-[url('../assets/icon/dropdown.svg')] bg-[center_right_2rem] bg-no-repeat px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
-            value={playerInfo.house}
-            onChange={handleChangeHouse}
-          >
-            <option value="">Select your House...</option>
-            <option value="Gryffindor">Gryffindor</option>
-            <option value="Ravenclaw">Ravenclaw</option>
-            <option value="Hufflepuff">Hufflepuff</option>
-            <option value="Slytherin">Slytherin</option>
-          </select>
-        </label>
-      </div>
+    <form className="flex flex-col gap-[48px]">
+      <label htmlFor="name" className="form__label">
+        Player Name
+        <input
+          placeholder=" Enter your Name..."
+          className="form__input"
+          id="name"
+          type="text"
+          value={playerInfo.name}
+          onChange={handleNameChange}
+        />
+      </label>
+
+      <label htmlFor="house" className="form__label">
+        Wizard House
+        <select
+          className="form__input cursor-pointer appearance-none  bg-[url('../assets/icon/dropdown.svg')] bg-[center_right_2rem] bg-no-repeat"
+          id="house"
+          value={playerInfo.house}
+          onChange={handleChangeHouse}
+        >
+          <option value="">Select your House...</option>
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="Slytherin">Slytherin</option>
+        </select>
+      </label>
       <div className="flex flex-row justify-between">
         <button
           type="button"
-          className="w-[180px] rounded-full bg-neutral-lightest/75 py-3 font-cinzel text-base text-secondary-dark hover:bg-secondary-dark/75 hover:text-neutral-lightest"
+          className="form__btn border-2 border-transparent bg-primary-darkest/80 text-neutral-lightest backdrop-blur-[4px] hover:border-primary-darkest hover:bg-neutral-lightest/80 hover:text-primary-darkest"
         >
           <Link to="/rules">Rules</Link>
         </button>
         <button
           type="button"
-          className="w-[180px] rounded-full bg-secondary-dark/75 py-3 font-cinzel text-base text-neutral-lightest hover:bg-neutral-lightest/75 hover:text-secondary-dark"
+          className="form__btn border-2 border-transparent bg-secondary-darkest/80 text-neutral-lightest backdrop-blur-[4px] hover:border-secondary-darkest hover:bg-neutral-lightest/80 hover:text-secondary-darkest"
         >
           <Link to="/game">Play now</Link>
         </button>
