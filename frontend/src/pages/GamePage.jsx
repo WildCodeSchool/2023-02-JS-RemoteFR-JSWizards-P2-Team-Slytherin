@@ -10,7 +10,7 @@ import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
 
 import filterCharacters from "../helper/filterCharacters";
-import hatCard from "../helper/hatCard";
+import hatCard from "../helper/pickHatCard";
 
 export default function GamePage({ characters, playerInfo }) {
   const gameDuration = 60;
