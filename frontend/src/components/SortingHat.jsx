@@ -11,7 +11,7 @@ export default function SortingHat({ message, hatCardPick }) {
           alt="Sorting hat"
         />
         <div className="flex h-[134px] w-[814px] items-center rounded-3xl bg-neutral-lightest px-2.5 pr-2">
-          <h2 className="grow whitespace-pre-line text-center font-ibarra text-lg text-neutral-dark">
+          <h2 className="grow whitespace-pre-line ps-52 font-ibarra text-lg text-neutral-dark">
             {formatMessage(message, hatCardPick)}
           </h2>
         </div>
