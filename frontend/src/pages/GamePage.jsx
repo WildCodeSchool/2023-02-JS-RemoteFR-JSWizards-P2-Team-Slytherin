@@ -21,7 +21,7 @@ export default function GamePage({ characters, playerInfo }) {
 
   const [message, setMessage] = useState({
     category: "",
-    response: `Hello ${playerInfo.name} from ${playerInfo.house}! \n Will you be able to find the right card? \n Click on a hint to begin...`,
+    response: `Greetings ${playerInfo.name} from ${playerInfo.house}! \n Will you be able to find the right card? \n Click on a hint to begin...`,
   });
 
   const addMessage = (newMessage) => {

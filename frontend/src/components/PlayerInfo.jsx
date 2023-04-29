@@ -1,41 +1,60 @@
-import { Link } from "react-router-dom";
-
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
 import PropTypes from "prop-types";
 
-export default function PlayerInfo({ playerInfo, setPlayerInfo }) {
-  const handleNameChange = (e) => {
-    const newName = { name: e.target.value };
-    setPlayerInfo((user) => ({ ...user, ...newName }));
+export default function PlayerInfo({ handleAddPlayerInfo }) {
+  const navigate = useNavigate();
+
+  const [player, setPlayer] = useState({
+    name: "",
+    house: "",
+  });
+
+  const handleSubmit = (event) => {
+    // 1. Prevent the page to be refreshed
+    event.preventDefault();
+
+    // 2. Check data before sending
+    const newPlayer = { ...player };
+    if (!player.name) newPlayer.name = "Dobby";
+    if (!player.house) newPlayer.house = "unknown magic school";
+
+    // 3. Send all PlayerInfo to the parent App
+    handleAddPlayerInfo(newPlayer);
+
+    // 4. Redirect to the GamePAge
+    navigate("/game");
   };
 
-  const handleChangeHouse = (e) => {
-    const newHouse = { house: e.target.value };
-    setPlayerInfo((user) => ({ ...user, ...newHouse }));
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setPlayer({ ...player, [name]: value });
   };
 
   return (
-    <form className="flex flex-col gap-[48px]">
-      <label htmlFor="user-name" className="form__label">
+    <form className="flex flex-col gap-[48px]" onSubmit={handleSubmit}>
+      <label htmlFor="username" className="form__label">
         Player Name
         <input
-          placeholder=" Enter your Name..."
           className="form__input"
-          id="user-name"
+          id="username"
           name="name"
           type="text"
-          value={playerInfo.name}
-          onChange={handleNameChange}
+          placeholder="Enter your Name..."
+          value={player.name}
+          onChange={handleChange}
         />
       </label>
 
-      <label htmlFor="user-house" className="form__label">
+      <label htmlFor="userhouse" className="form__label">
         Wizard House
         <select
           className="form__input cursor-pointer appearance-none  bg-[url('../assets/icon/dropdown.svg')] bg-[center_right_2rem] bg-no-repeat"
-          id="user-house"
+          id="userhouse"
           name="house"
-          value={playerInfo.house}
-          onChange={handleChangeHouse}
+          placeholder="Select your House..."
+          value={player.house}
+          onChange={handleChange}
         >
           <option value="">Select your House...</option>
           <option value="Gryffindor">Gryffindor</option>
@@ -52,21 +71,17 @@ export default function PlayerInfo({ playerInfo, setPlayerInfo }) {
           Rules
         </Link>
 
-        <Link
+        <button
+          type="submit"
           className="form__btn border-2 border-transparent bg-secondary-darkest/80 text-neutral-lightest backdrop-blur-[4px] hover:border-secondary-darkest hover:bg-neutral-lightest/80 hover:text-secondary-darkest"
-          to="/game"
         >
           Play now
-        </Link>
+        </button>
       </div>
     </form>
   );
 }
 
 PlayerInfo.propTypes = {
-  playerInfo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    house: PropTypes.string.isRequired,
-  }).isRequired,
-  setPlayerInfo: PropTypes.func.isRequired,
+  handleAddPlayerInfo: PropTypes.func.isRequired,
 };
