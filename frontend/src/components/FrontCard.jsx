@@ -11,14 +11,14 @@ export default function FrontCard({ name, image }) {
       <img
         src={image}
         alt={nameShort}
-        className="absolute top-1/2 h-[76px] w-[61px] -translate-y-2/4 rounded-full object-cover"
+        className="absolute top-[55%] h-[98px] w-[79px] -translate-y-2/4 rounded-full object-cover"
       />
       <img
         src="../assets/img/card-front-decoration.png"
         alt="golden frame decoration"
-        className="absolute top-1/2 h-[93px] w-[81px] -translate-y-2/4"
+        className="absolute top-[55%] h-[120px] w-[104px] -translate-y-2/4"
       />
-      <button type="button" className="btn absolute bottom-2">
+      <button type="button" className="btn absolute bottom-1.5 right-0">
         <img
           src="../assets/img/card-front-validate.png"
           alt="golden snitch"
