@@ -43,7 +43,7 @@
   }
 
   .form__btn {
-    @apply w-[180px] rounded-full py-3 font-cinzel text-base;
+    @apply flex w-[180px] items-center justify-center rounded-full py-3 font-cinzel text-base;
   }
 }
 

@@ -15,23 +15,25 @@ export default function PlayerInfo({ playerInfo, setPlayerInfo }) {
 
   return (
     <form className="flex flex-col gap-[48px]">
-      <label htmlFor="name" className="form__label">
+      <label htmlFor="user-name" className="form__label">
         Player Name
         <input
           placeholder=" Enter your Name..."
           className="form__input"
-          id="name"
+          id="user-name"
+          name="name"
           type="text"
           value={playerInfo.name}
           onChange={handleNameChange}
         />
       </label>
 
-      <label htmlFor="house" className="form__label">
+      <label htmlFor="user-house" className="form__label">
         Wizard House
         <select
           className="form__input cursor-pointer appearance-none  bg-[url('../assets/icon/dropdown.svg')] bg-[center_right_2rem] bg-no-repeat"
-          id="house"
+          id="user-house"
+          name="house"
           value={playerInfo.house}
           onChange={handleChangeHouse}
         >
@@ -43,18 +45,19 @@ export default function PlayerInfo({ playerInfo, setPlayerInfo }) {
         </select>
       </label>
       <div className="flex flex-row justify-between">
-        <button
-          type="button"
+        <Link
           className="form__btn border-2 border-transparent bg-primary-darkest/80 text-neutral-lightest backdrop-blur-[4px] hover:border-primary-darkest hover:bg-neutral-lightest/80 hover:text-primary-darkest"
+          to="/rules"
         >
-          <Link to="/rules">Rules</Link>
-        </button>
-        <button
-          type="button"
+          Rules
+        </Link>
+
+        <Link
           className="form__btn border-2 border-transparent bg-secondary-darkest/80 text-neutral-lightest backdrop-blur-[4px] hover:border-secondary-darkest hover:bg-neutral-lightest/80 hover:text-secondary-darkest"
+          to="/game"
         >
-          <Link to="/game">Play now</Link>
-        </button>
+          Play now
+        </Link>
       </div>
     </form>
   );
