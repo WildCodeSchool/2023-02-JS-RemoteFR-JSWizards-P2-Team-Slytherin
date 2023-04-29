@@ -17,7 +17,7 @@ export default function Clue({
     <div>
       <button
         type="button"
-        className="flex h-[60px] w-[264px] items-center gap-8 rounded-[10px] bg-[radial-gradient(var(--tw-gradient-stops))] from-[#6A63A8] to-[#29264B] px-6 py-3"
+        className="flex h-[60px] w-[264px] items-center gap-8 rounded-[10px] bg-[radial-gradient(var(--tw-gradient-stops))] from-[#6A63A8] to-[#29264B] px-6 py-3 shadow-xl duration-300 ease-out active:scale-[0.98] active:shadow-sm"
         onClick={handleButtonClick}
       >
         <div className="img-wrapper flex h-8 w-[45px] justify-center ">
