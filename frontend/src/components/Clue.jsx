@@ -23,10 +23,8 @@ export default function Clue({
   return (
     <button
       type="button"
-      className={`flex h-[60px] w-[264px] items-center gap-8 rounded-[10px] border border-transparent px-6 py-3 shadow-xl duration-300 ease-out active:scale-[0.97] active:shadow-sm ${
-        alreadyClicked
-          ? ""
-          : "to-[#29264B]} bg-[radial-gradient(var(--tw-gradient-stops))] from-[#6A63A8]"
+      className={`flex h-[60px] w-[264px] items-center gap-8 rounded-[10px] border border-transparent bg-[radial-gradient(var(--tw-gradient-stops))] from-[#6A63A8] to-[#29264B] px-6 py-3 shadow-xl duration-300 ease-out active:scale-[0.97] active:shadow-sm ${
+        alreadyClicked ? "opacity-50" : "hover:border-neutral-light"
       }`}
       onClick={handleClick}
     >
