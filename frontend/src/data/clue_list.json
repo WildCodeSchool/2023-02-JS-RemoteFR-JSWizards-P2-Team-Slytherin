@@ -11,7 +11,7 @@
     "id": "2",
     "label": "Species",
     "category": "species",
-    "response": "I'm a...",
+    "response": "I'm ...",
     "src": "../assets/icon/specie.svg",
     "alt": "specie icon"
   },

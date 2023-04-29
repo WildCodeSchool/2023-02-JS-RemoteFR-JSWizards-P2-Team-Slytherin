@@ -1,5 +1,5 @@
 import PropTypes from "prop-types";
-import formatMessage from "../helper/FormatMessage";
+import formatMessage from "../helper/formatMessage";
 
 export default function SortingHat({ message, hatCardPick }) {
   return (
