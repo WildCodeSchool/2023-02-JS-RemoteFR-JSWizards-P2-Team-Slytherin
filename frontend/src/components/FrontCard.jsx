@@ -18,11 +18,11 @@ export default function FrontCard({ name, image }) {
         alt="golden frame decoration"
         className="absolute top-1/2 h-[93px] w-[81px] -translate-y-2/4"
       />
-      <button type="button" className="absolute bottom-2">
+      <button type="button" className="btn absolute bottom-2">
         <img
           src="./assets/img/card-front-validate.png"
           alt="golden snitch"
-          className="h-[32px] w-[32px]"
+          className="btn-validate h-[32px] w-[32px]"
         />
       </button>
     </div>

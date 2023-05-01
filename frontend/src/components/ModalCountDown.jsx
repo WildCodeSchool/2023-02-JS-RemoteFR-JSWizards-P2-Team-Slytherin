@@ -6,7 +6,6 @@ const ModalCountDown = ({ timeBeforeGame }) => {
   const [count, setCount] = useState("");
 
   useEffect(() => {
-    console.log("je commence à attendre");
     setTimeout(function () {
       setCount(timeBeforeGame);
     }, 1000);
@@ -14,7 +13,6 @@ const ModalCountDown = ({ timeBeforeGame }) => {
 
   let countID = null;
   useEffect(() => {
-    console.log("je suis le timer");
     if (count > 0) {
       countID = setTimeout(() => setCount(count - 1), 1000);
     } else {
@@ -24,6 +22,14 @@ const ModalCountDown = ({ timeBeforeGame }) => {
       clearInterval(countID);
     };
   }, [count]);
+
+  useEffect(() => {
+    if (showModal) {
+      setTimeout(() => {
+        setShowModal(false);
+      }, 4000);
+    }
+  }, [showModal]);
 
   return (
     <>

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import PropTypes from "prop-types";
 
 import Layout from "../components/Layout";
@@ -7,16 +8,29 @@ import Score from "../components/Score";
 import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
+
 import filterCharacters from "../helper/filterCharacters";
 import ModalCountDown from "../components/ModalCountDown";
 // import hatCard from "../helper/hatCard"; wil be used in a futur composant
+import hatCard from "../helper/hatCard";
 
-function GamePage({ characters }) {
+export default function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
   const timeLeft = 3;
-  const filteredCharacters = filterCharacters(characters, "image");
   // const hatCardPick = hatCard(filteredCharacters); wil be used in a futur composant
+
+  const [filteredCharacters] = useState(filterCharacters(characters, "image"));
+  const [hatCardPick] = useState(hatCard(filteredCharacters));
+
+  const [message, setMessage] = useState({
+    category: "",
+    response: "Hello Dobby! Click on a hint to begin...",
+  });
+
+  const addMessage = (newMessage) => {
+    setMessage(newMessage);
+  };
 
   return (
     <div className="bg-[url('./assets/img/background-game-screen-desktop.png')] bg-cover">
@@ -27,20 +41,17 @@ function GamePage({ characters }) {
             <Timer gameTime={gameDuration} />
             <Score startingScore={scoreStart} />
           </div>
-
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
-            <SortingHat />
+            <SortingHat message={message} hatCardPick={hatCardPick} />
             <BackCard />
             <CardBoard characters={filteredCharacters} />
-            <ClueList />
+            <ClueList addMessage={addMessage} />
           </div>
         </div>
       </Layout>
     </div>
   );
 }
-
-export default GamePage;
 
 GamePage.propTypes = {
   characters: PropTypes.arrayOf(
