@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import PropTypes from "prop-types";
+import CountDown from "./CountDown";
 
-const ModalCountDown = ({ timeBeforeGame }) => {
+const ModalCountDown = () => {
   const [showModal, setShowModal] = useState(true);
-  const [count, setCount] = useState("");
 
   useEffect(() => {
     setTimeout(function () {
@@ -11,23 +10,11 @@ const ModalCountDown = ({ timeBeforeGame }) => {
     }, 1000);
   }, []);
 
-  let countID = null;
-  useEffect(() => {
-    if (count > 0) {
-      countID = setTimeout(() => setCount(count - 1), 1000);
-    } else {
-      clearTimeout(countID);
-    }
-    return function cleanUp() {
-      clearInterval(countID);
-    };
-  }, [count]);
-
   useEffect(() => {
     if (showModal) {
       setTimeout(() => {
         setShowModal(false);
-      }, 4000);
+      }, 2900);
     }
   }, [showModal]);
 
@@ -40,16 +27,10 @@ const ModalCountDown = ({ timeBeforeGame }) => {
               The game will <br />
               begin in...
               <br />
-              {count}
+              <div className="flex justify-center p-24">
+                <CountDown />
+              </div>
             </h2>
-
-            <button
-              className=" font-cinzel text-white"
-              type="button"
-              onClick={() => setShowModal(false)}
-            >
-              X
-            </button>
           </div>
           <div className="fixed inset-0 z-40 bg-black opacity-70"></div>
         </>
