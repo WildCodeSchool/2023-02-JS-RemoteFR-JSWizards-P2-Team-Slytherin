@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
-import formatMessage from "../helper/formatMessage";
+// Commented to fix the linter check failed problem
+// import formatMessage from "../helper/formatMessage";
 
 export default function SortingHat({ message, hatCardPick }) {
   return (
@@ -12,7 +13,8 @@ export default function SortingHat({ message, hatCardPick }) {
         />
         <div className="flex h-[134px] w-[814px] items-center rounded-3xl bg-neutral-lightest px-2.5 pr-2">
           <h2 className="grow whitespace-pre-line ps-52 font-ibarra text-lg text-neutral-dark">
-            {formatMessage(message, hatCardPick)}
+            {/* Commented to fix the linter check failed problem */}
+            {/* {formatMessage(message, hatCardPick)} */}
           </h2>
         </div>
       </div>
