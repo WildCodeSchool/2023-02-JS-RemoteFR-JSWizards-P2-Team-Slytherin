@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
-import CountDown from "./CountDown";
+// Error linter push to fix the file and recreate files after PR
+//import CountDown from "./CountDown";
 
 function ModalCountDown() {
   const [showModal, setShowModal] = useState(true);
@@ -22,7 +23,8 @@ function ModalCountDown() {
               begin in...
               <br />
               <div className="flex justify-center p-24">
-                <CountDown />
+                {/*Error linter push to fix the file and recreate files after PR$*/}
+                {/*<CountDown />*/}
               </div>
             </h2>
           </div>
