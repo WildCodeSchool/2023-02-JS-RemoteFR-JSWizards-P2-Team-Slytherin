@@ -1,56 +1,87 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { useState } from "react";
+import PropTypes from "prop-types";
 
-export default function PlayerInfo() {
-  const [fullName, setFullName] = useState("");
-  const [houseChoice, setHouseChoice] = useState();
+export default function PlayerInfo({ handleAddPlayerInfo }) {
+  const navigate = useNavigate();
 
-  const handleChangeFullName = (e) => setFullName(e.target.value);
-  const handleSelectHouse = (e) => setHouseChoice(e.target.value);
+  const [player, setPlayer] = useState({
+    name: "",
+    house: "",
+  });
+
+  const handleSubmit = (event) => {
+    // 1. Prevent the page to be refreshed
+    event.preventDefault();
+
+    // 2. Check data before sending
+    const newPlayer = { ...player };
+    if (!player.name) newPlayer.name = "Dobby";
+    if (!player.house) newPlayer.house = "unknown magic school";
+
+    // 3. Send all PlayerInfo to the parent App
+    handleAddPlayerInfo(newPlayer);
+
+    // 4. Redirect to the GamePAge
+    navigate("/game");
+  };
+
+  const handleChange = (event) => {
+    const { name, value } = event.target;
+    setPlayer({ ...player, [name]: value });
+  };
 
   return (
-    <form className="flex w-[398px] flex-col gap-[48px]">
-      <div className="flex flex-col gap-[48px]">
-        <label className="font-ibarra text-lg text-neutral-lightest">
-          Player Name
-          <input
-            placeholder=" Enter your Name..."
-            className="h-[52px] w-[400px] rounded-full bg-neutral-lightest/75 px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
-            id="fullName"
-            type="text"
-            value={fullName}
-            onChange={handleChangeFullName}
-          />
-        </label>
-        <label className="flex flex-col font-ibarra text-lg text-neutral-lightest ">
-          Wizard House
-          <select
-            className="h-[52px] w-[400px] rounded-full bg-neutral-lightest/75 px-[48px] py-3 text-base text-neutral-lightest backdrop-blur-sm placeholder:text-neutral-lightest"
-            value={houseChoice}
-            onChange={handleSelectHouse}
-          >
-            <option value="">Select your House...</option>
-            <option value="Gryffindor">Gryffindor</option>
-            <option value="Ravenclaw">Ravenclaw</option>
-            <option value="Hufflepuff">Hufflepuff</option>
-            <option value="Slytherin">Slytherin</option>
-          </select>
-        </label>
-      </div>
+    <form className="flex flex-col gap-[48px]" onSubmit={handleSubmit}>
+      <label htmlFor="username" className="form__label">
+        Player Name
+        <input
+          className="form__input"
+          id="username"
+          name="name"
+          type="text"
+          placeholder="Enter your Name..."
+          value={player.name}
+          onChange={handleChange}
+        />
+      </label>
+
+      <label htmlFor="userhouse" className="form__label">
+        Wizard House
+        <select
+          className="form__input cursor-pointer appearance-none  bg-[url('../assets/icon/dropdown.svg')] bg-[center_right_2rem] bg-no-repeat"
+          id="userhouse"
+          name="house"
+          placeholder="Select your House..."
+          value={player.house}
+          onChange={handleChange}
+        >
+          <option value="">Select your House...</option>
+          <option value="Gryffindor">Gryffindor</option>
+          <option value="Ravenclaw">Ravenclaw</option>
+          <option value="Hufflepuff">Hufflepuff</option>
+          <option value="Slytherin">Slytherin</option>
+        </select>
+      </label>
       <div className="flex flex-row justify-between">
-        <button
-          type="button"
-          className="w-[180px] rounded-full bg-neutral-lightest/75 py-3 font-cinzel text-base text-secondary-dark hover:bg-secondary-dark/75 hover:text-neutral-lightest"
+        <Link
+          className="form__btn border-2 border-transparent bg-primary-darkest/80 text-neutral-lightest backdrop-blur-[4px] hover:border-primary-darkest hover:bg-neutral-lightest/80 hover:text-primary-darkest"
+          to="/rules"
         >
-          <Link to="/rules">Rules</Link>
-        </button>
+          Rules
+        </Link>
+
         <button
-          type="button"
-          className="w-[180px] rounded-full bg-secondary-dark/75 py-3 font-cinzel text-base text-neutral-lightest hover:bg-neutral-lightest/75 hover:text-secondary-dark"
+          type="submit"
+          className="form__btn border-2 border-transparent bg-secondary-darkest/80 text-neutral-lightest backdrop-blur-[4px] hover:border-secondary-darkest hover:bg-neutral-lightest/80 hover:text-secondary-darkest"
         >
-          <Link to="/game">Play now</Link>
+          Play now
         </button>
       </div>
     </form>
   );
 }
+
+PlayerInfo.propTypes = {
+  handleAddPlayerInfo: PropTypes.func.isRequired,
+};

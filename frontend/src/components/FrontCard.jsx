@@ -6,21 +6,21 @@ export default function FrontCard({ name, image }) {
   const nameShort = `${firstName}. ${lastName}`;
 
   return (
-    <div className="relative flex h-[160px] w-[112px] flex-col items-center rounded-[6px] bg-[url('./assets/img/card-front-background.png')] bg-cover py-2">
+    <div className="relative flex h-[160px] w-[112px] flex-col items-center rounded-[6px] bg-[url('../assets/img/card-front-background.png')] bg-cover py-2">
       <span className="font-ibarra text-base">{nameShort}</span>
       <img
         src={image}
         alt={nameShort}
-        className="absolute top-1/2 h-[76px] w-[61px] -translate-y-2/4 rounded-full object-cover"
+        className="absolute top-[55%] h-[98px] w-[79px] -translate-y-2/4 rounded-full object-cover"
       />
       <img
-        src="./assets/img/card-front-decoration.png"
+        src="../assets/img/card-front-decoration.png"
         alt="golden frame decoration"
-        className="absolute top-1/2 h-[93px] w-[81px] -translate-y-2/4"
+        className="absolute top-[55%] h-[120px] w-[104px] -translate-y-2/4"
       />
-      <button type="button" className="btn absolute bottom-2">
+      <button type="button" className="btn absolute bottom-1.5 right-0">
         <img
-          src="./assets/img/card-front-validate.png"
+          src="../assets/img/card-front-validate.png"
           alt="golden snitch"
           className="btn-validate h-[32px] w-[32px]"
         />

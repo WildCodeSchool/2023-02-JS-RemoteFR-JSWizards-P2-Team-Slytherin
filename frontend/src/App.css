@@ -26,12 +26,24 @@
   h1 {
     @apply font-cinzel text-4xl text-neutral-lightest;
   }
+
+  button {
+    cursor: pointer;
+  }
 }
 
 /* Custom CSS rules for components (.card, .btn, ...) */
 @layer components {
-  button {
-    cursor: pointer;
+  .form__label {
+    @apply block font-ibarra text-lg text-neutral-lightest;
+  }
+
+  .form__input {
+    @apply mt-2 block w-[400px] rounded-full bg-neutral-lightest/50 px-12 py-3 text-base text-neutral-light backdrop-blur-[4px] placeholder:text-base placeholder:text-neutral-light;
+  }
+
+  .form__btn {
+    @apply flex w-[180px] items-center justify-center rounded-full py-3 font-cinzel text-base;
   }
 }
 
