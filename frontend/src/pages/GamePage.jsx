@@ -11,10 +11,10 @@ import ClueList from "../components/ClueList";
 
 import filterCharacters from "../helper/filterCharacters";
 import ModalCountDown from "../components/ModalCountDown";
-// import hatCard from "../helper/hatCard"; wil be used in a futur composant
-import hatCard from "../helper/hatCard";
 
-export default function GamePage({ characters }) {
+import hatCard from "../helper/pickHatCard";
+
+export default function GamePage({ characters, playerInfo }) {
   const gameDuration = 60;
   const scoreStart = 1000;
 
@@ -25,7 +25,7 @@ export default function GamePage({ characters }) {
 
   const [message, setMessage] = useState({
     category: "",
-    response: "Hello Dobby! Click on a hint to begin...",
+    response: `Greetings ${playerInfo.name} from ${playerInfo.house}! \n Will you be able to find the right card? \n Click on a hint to begin...`,
   });
 
   const addMessage = (newMessage) => {
@@ -33,7 +33,7 @@ export default function GamePage({ characters }) {
   };
 
   return (
-    <div className="bg-[url('./assets/img/background-game-screen-desktop.png')] bg-cover">
+    <div className="bg-[url('../assets/img/background-game-screen-desktop.png')] bg-cover">
       <Layout>
         <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
           <div className="relative -top-7 mx-auto flex justify-center gap-16">
@@ -42,7 +42,11 @@ export default function GamePage({ characters }) {
             <Score startingScore={scoreStart} />
           </div>
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
-            <SortingHat message={message} hatCardPick={hatCardPick} />
+            <SortingHat
+              message={message}
+              hatCardPick={hatCardPick}
+              playerInfo={playerInfo}
+            />
             <BackCard />
             <CardBoard characters={filteredCharacters} />
             <ClueList addMessage={addMessage} />
@@ -61,4 +65,8 @@ GamePage.propTypes = {
       image: PropTypes.string.isRequired,
     })
   ).isRequired,
+  playerInfo: PropTypes.shape({
+    name: PropTypes.string.isRequired,
+    house: PropTypes.string.isRequired,
+  }).isRequired,
 };

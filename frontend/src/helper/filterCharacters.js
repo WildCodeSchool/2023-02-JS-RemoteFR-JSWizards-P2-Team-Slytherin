@@ -4,7 +4,7 @@
 
 const filterCharacters = (characters, filter) => {
   const arrayFilter = characters.filter((wizards) => wizards[filter] !== "");
-  const test = arrayFilter.sort((a, b) => 0.5 - Math.random()).slice(0, 20);
+  const test = arrayFilter.sort((a, b) => 0.5 - Math.random()).slice(0, 21);
   return test;
 };
 

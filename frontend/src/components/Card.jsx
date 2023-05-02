@@ -14,13 +14,14 @@ export default function Card({ name, image }) {
   };
 
   return (
-    <button
-      type="button"
-      className="card-container h-[160px] w-[112px] cursor-[url('./assets/icon/flip-cursor.svg'),_pointer] duration-300 ease-in-out perspective hover:-translate-y-1 hover:drop-shadow-xl"
+    <div
+      aria-hidden
+      role="button"
+      className="card-container h-[160px] w-[112px] cursor-[url('../assets/icon/flip-cursor.svg'),_pointer] duration-300 ease-in-out perspective hover:-translate-y-1 hover:drop-shadow-xl"
       onClick={flipCardOnClick}
     >
       <div
-        className={`card relative h-[160px] w-[112px] duration-1000 preserve-3d ${
+        className={`card relative h-[160px] w-[112px] duration-500 preserve-3d ${
           showFront ? "my-rotate-180" : ""
         }`}
       >
@@ -31,7 +32,7 @@ export default function Card({ name, image }) {
           <BackCard />
         </div>
       </div>
-    </button>
+    </div>
   );
 }
 

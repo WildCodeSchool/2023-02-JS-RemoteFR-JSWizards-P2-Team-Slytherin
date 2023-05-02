@@ -1,9 +1,11 @@
+import PropTypes from "prop-types";
+
 import Layout from "../components/Layout";
 import PlayerInfo from "../components/PlayerInfo";
 
-export default function HomePage() {
+export default function HomePage({ handleAddPlayerInfo }) {
   return (
-    <div className="bg-[url('./assets/img/background-welcome-screen-desktop.png')] bg-cover bg-left-bottom">
+    <div className="bg-[url('../assets/img/background-welcome-screen-desktop.png')] bg-cover bg-left-bottom">
       <Layout>
         <div className="mb-[72px] mr-16 mt-[66px] flex flex-col">
           <h1 className="flex justify-end">Who Wiz It?</h1>
@@ -12,9 +14,13 @@ export default function HomePage() {
           </h2>
         </div>
         <div className="mr-16 flex justify-end">
-          <PlayerInfo />
+          <PlayerInfo handleAddPlayerInfo={handleAddPlayerInfo} />
         </div>
       </Layout>
     </div>
   );
 }
+
+HomePage.propTypes = {
+  handleAddPlayerInfo: PropTypes.func.isRequired,
+};

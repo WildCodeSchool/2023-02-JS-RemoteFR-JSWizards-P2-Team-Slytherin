@@ -8,12 +8,12 @@ function ModalCountDown() {
     if (showModal) {
       setTimeout(() => {
         setShowModal(false);
-      }, 2900);
+      }, 2800);
     }
   }, [showModal]);
 
   return (
-    <>
+    <div>
       {showModal ? (
         <>
           <div className="fixed inset-0 z-50 flex items-center justify-center overflow-y-auto overflow-x-hidden text-center font-cinzel text-4xl text-white outline-none backdrop-blur-sm focus:outline-none">
@@ -29,7 +29,7 @@ function ModalCountDown() {
           <div className="fixed inset-0 z-40 bg-black opacity-70" />
         </>
       ) : null}
-    </>
+    </div>
   );
 }
 

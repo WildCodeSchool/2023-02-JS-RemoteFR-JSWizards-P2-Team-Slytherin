@@ -4,15 +4,15 @@
     "label": "Gender",
     "category": "gender",
     "response": "I'm a...",
-    "src": "./assets/icon/gender.svg",
+    "src": "../assets/icon/gender.svg",
     "alt": "gender icon"
   },
   {
     "id": "2",
     "label": "Species",
     "category": "species",
-    "response": "I'm a...",
-    "src": "./assets/icon/specie.svg",
+    "response": "I'm ...",
+    "src": "../assets/icon/specie.svg",
     "alt": "specie icon"
   },
   {
@@ -20,7 +20,7 @@
     "label": "House",
     "category": "house",
     "response": "I was worthy to belong to...",
-    "src": "./assets/icon/house.svg",
+    "src": "../assets/icon/house.svg",
     "alt": "houses icon"
   },
   {
@@ -28,7 +28,7 @@
     "label": "Eye Color",
     "category": "eyeColour",
     "response": "My eyes are...",
-    "src": "./assets/icon/eye.svg",
+    "src": "../assets/icon/eye.svg",
     "alt": "eye icon"
   },
   {
@@ -36,7 +36,7 @@
     "label": "Hair Color",
     "category": "hairColour",
     "response": "My hair is...",
-    "src": "./assets/icon/hair.svg",
+    "src": "../assets/icon/hair.svg",
     "alt": "hair icon"
   },
   {
@@ -44,7 +44,7 @@
     "label": "Status",
     "category": "hogwartsStudent",
     "response": "At Hogwart I'm a...",
-    "src": "./assets/icon/status.svg",
+    "src": "../assets/icon/status.svg",
     "alt": "status icon"
   },
   {
@@ -52,7 +52,7 @@
     "label": "Actor",
     "category": "actor",
     "response": "The actor who played me was...",
-    "src": "./assets/icon/actor.svg",
+    "src": "../assets/icon/actor.svg",
     "alt": "sctor icon"
   },
   {
@@ -60,7 +60,7 @@
     "label": "Patronus",
     "category": "patronus",
     "response": "My patronus is...",
-    "src": "./assets/icon/patronus.png",
+    "src": "../assets/icon/patronus.png",
     "alt": "patronus icon"
   },
   {
@@ -68,7 +68,7 @@
     "label": "Wand",
     "category": "wand",
     "response": "My wand is...",
-    "src": "./assets/icon/wand.svg",
+    "src": "../assets/icon/wand.svg",
     "alt": "wand icon"
   }
 ]

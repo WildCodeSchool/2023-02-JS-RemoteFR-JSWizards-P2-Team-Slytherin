@@ -46,6 +46,13 @@ const formatMessage = (message, hatCardPick) => {
           resText = "dead";
         }
         break;
+      case "species":
+        if (hatCardPick[matchKey] === "cat") {
+          resText = "not human";
+        } else {
+          resText = `a ${hatCardPick[matchKey]}`;
+        }
+        break;
       default:
         resText = hatCardPick[matchKey];
     }
