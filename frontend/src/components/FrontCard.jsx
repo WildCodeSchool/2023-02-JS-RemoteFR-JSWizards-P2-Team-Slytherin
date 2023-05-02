@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
+import shortenName from "../helper/shortenName";
+
 export default function FrontCard({ name, image, handleModal, selectCard }) {
-  const firstName = name.split(" ")[0].charAt(0);
-  const lastName = name.split(" ")[1];
-  const nameShort = `${firstName}. ${lastName}`;
+  const nameShort = shortenName(name);
 
   const handleClick = () => {
     selectCard(name);
