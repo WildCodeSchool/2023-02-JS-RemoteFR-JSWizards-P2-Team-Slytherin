@@ -9,7 +9,6 @@ import displayTime from "../helper/displayTime";
 
 export default function Timer({ gameTime }) {
   const [timer, setTimer] = useState(gameTime);
-
   let timerID = null;
   useEffect(() => {
     if (timer > 0) {
@@ -21,6 +20,12 @@ export default function Timer({ gameTime }) {
       clearInterval(timerID);
     };
   }, [timer]);
+
+  // const userScore = (score) => {
+  //   if(timer <= 0){
+  //     localStorage.setItem("score", score)
+  //   }
+  // }
 
   return (
     <div className="flex w-fit min-w-[180px] items-center gap-x-3 rounded-full border-2 border-neutral-light px-8 py-2">
