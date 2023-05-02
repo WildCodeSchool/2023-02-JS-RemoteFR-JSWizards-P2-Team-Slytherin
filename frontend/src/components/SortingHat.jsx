@@ -1,10 +1,7 @@
-// Commented to fix the linter check failed problem
-// import PropTypes from "prop-types";
-// import formatMessage from "../helper/formatMessage";
+import PropTypes from "prop-types";
+import formatMessage from "../helper/formatMessage";
 
-// Commented to fix the linter check failed problem
-// export default function SortingHat({ message, hatCardPick }) {
-export default function SortingHat() {
+export default function SortingHat({ message, hatCardPick }) {
   return (
     <div className="relative w-full px-4">
       <div className="flex w-full items-center p-4">
@@ -15,8 +12,7 @@ export default function SortingHat() {
         />
         <div className="flex h-[134px] w-[814px] items-center rounded-3xl bg-neutral-lightest px-2.5 pr-2">
           <h2 className="grow whitespace-pre-line ps-52 font-ibarra text-lg text-neutral-dark">
-            {/* Commented to fix the linter check failed problem */}
-            {/* {formatMessage(message, hatCardPick)} */}
+            {formatMessage(message, hatCardPick)}
           </h2>
         </div>
       </div>
@@ -24,14 +20,14 @@ export default function SortingHat() {
   );
 }
 
-// SortingHat.propTypes = {
-//   message: PropTypes.shape({
-//     category: PropTypes.string.isRequired,
-//     response: PropTypes.string.isRequired,
-//   }).isRequired,
-//   hatCardPick: PropTypes.shape({
-//     id: PropTypes.string.isRequired,
-//     name: PropTypes.string.isRequired,
-//     image: PropTypes.string.isRequired,
-//   }).isRequired,
-// };
+SortingHat.propTypes = {
+  message: PropTypes.shape({
+    category: PropTypes.string.isRequired,
+    response: PropTypes.string.isRequired,
+  }).isRequired,
+  hatCardPick: PropTypes.shape({
+    id: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
+  }).isRequired,
+};
