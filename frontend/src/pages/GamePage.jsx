@@ -8,6 +8,7 @@ import Score from "../components/Score";
 import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
+import ModalCountDown from "../components/ModalCountDown";
 
 import filterCharacters from "../helper/filterCharacters";
 import hatCard from "../helper/pickHatCard";
@@ -33,6 +34,7 @@ export default function GamePage({ characters, playerInfo }) {
       <Layout>
         <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
           <div className="relative -top-7 mx-auto flex justify-center gap-16">
+            <ModalCountDown />
             <Timer gameTime={gameDuration} />
             <Score startingScore={scoreStart} />
           </div>
