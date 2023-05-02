@@ -8,7 +8,6 @@ import Score from "../components/Score";
 import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
-import CountDown from "../components/CountDown";
 
 import filterCharacters from "../helper/filterCharacters";
 import ModalCountDown from "../components/ModalCountDown";
@@ -18,7 +17,6 @@ import hatCard from "../helper/hatCard";
 export default function GamePage({ characters }) {
   const gameDuration = 60;
   const scoreStart = 1000;
-  const timeLeft = 3;
 
   // const hatCardPick = hatCard(filteredCharacters); wil be used in a futur composant
 
@@ -39,7 +37,7 @@ export default function GamePage({ characters }) {
       <Layout>
         <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
           <div className="relative -top-7 mx-auto flex justify-center gap-16">
-            <ModalCountDown timeBeforeGame={timeLeft} />
+            <ModalCountDown />
             <Timer gameTime={gameDuration} />
             <Score startingScore={scoreStart} />
           </div>

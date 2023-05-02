@@ -1,14 +1,8 @@
 import { useState, useEffect } from "react";
 import CountDown from "./CountDown";
 
-const ModalCountDown = () => {
+function ModalCountDown() {
   const [showModal, setShowModal] = useState(true);
-
-  useEffect(() => {
-    setTimeout(function () {
-      setCount(timeBeforeGame);
-    }, 1000);
-  }, []);
 
   useEffect(() => {
     if (showModal) {
@@ -32,11 +26,11 @@ const ModalCountDown = () => {
               </div>
             </h2>
           </div>
-          <div className="fixed inset-0 z-40 bg-black opacity-70"></div>
+          <div className="fixed inset-0 z-40 bg-black opacity-70" />
         </>
       ) : null}
     </>
   );
-};
+}
 
 export default ModalCountDown;
