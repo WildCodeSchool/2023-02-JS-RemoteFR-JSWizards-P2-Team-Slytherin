@@ -22,8 +22,7 @@ function ModalCountDown() {
               begin in...
               <br />
               <div className="flex justify-center p-24">
-               
-                <CountDown /> 
+                <CountDown />
               </div>
             </h2>
           </div>
