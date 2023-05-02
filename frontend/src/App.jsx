@@ -7,6 +7,7 @@ import HomePage from "./pages/HomePage";
 import GamePage from "./pages/GamePage";
 import RulesPage from "./pages/RulesPage";
 import ScorePage from "./pages/ScorePage";
+import Page404 from "./pages/Page404";
 
 import "./App.css";
 
@@ -56,6 +57,7 @@ function App() {
           />
           <Route path="rules" element={<RulesPage />} />
           <Route path="score" element={<ScorePage />} />
+          <Route path="*" element={<Page404 />} />
         </Routes>
       </div>
     );
