@@ -1,8 +1,10 @@
-import PropTypes from "prop-types";
 // Commented to fix the linter check failed problem
+// import PropTypes from "prop-types";
 // import formatMessage from "../helper/formatMessage";
 
-export default function SortingHat({ message, hatCardPick }) {
+// Commented to fix the linter check failed problem
+// export default function SortingHat({ message, hatCardPick }) {
+export default function SortingHat() {
   return (
     <div className="relative w-full px-4">
       <div className="flex w-full items-center p-4">
@@ -22,14 +24,14 @@ export default function SortingHat({ message, hatCardPick }) {
   );
 }
 
-SortingHat.propTypes = {
-  message: PropTypes.shape({
-    category: PropTypes.string.isRequired,
-    response: PropTypes.string.isRequired,
-  }).isRequired,
-  hatCardPick: PropTypes.shape({
-    id: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
-    image: PropTypes.string.isRequired,
-  }).isRequired,
-};
+// SortingHat.propTypes = {
+//   message: PropTypes.shape({
+//     category: PropTypes.string.isRequired,
+//     response: PropTypes.string.isRequired,
+//   }).isRequired,
+//   hatCardPick: PropTypes.shape({
+//     id: PropTypes.string.isRequired,
+//     name: PropTypes.string.isRequired,
+//     image: PropTypes.string.isRequired,
+//   }).isRequired,
+// };
