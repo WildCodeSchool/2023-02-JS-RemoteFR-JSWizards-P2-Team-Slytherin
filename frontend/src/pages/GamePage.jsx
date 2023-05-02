@@ -8,7 +8,8 @@ import Score from "../components/Score";
 import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
-import ModalConfirmCard from "../components/ModalConfirmCard";
+import ModalConfirm from "../components/ModalConfirm";
+import ModalEndGame from "../components/ModalEndGame";
 
 import filterCharacters from "../helper/filterCharacters";
 import hatCard from "../helper/pickHatCard";
@@ -25,10 +26,10 @@ export default function GamePage({ characters, playerInfo }) {
    */
   const [filteredCharacters] = useState(filterCharacters(characters, "image"));
   const [hatCardPick] = useState(hatCard(filteredCharacters));
-  // CURENTLY TESTING
-  const [openModal, setOpenModal] = useState(false);
-  // CURENTLY TESTING
-  const [selectedCard, setSelectedCard] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({ name: "toto", image: "" });
+  const [isEndGame, setIsEndGame] = useState(false);
+
   const [message, setMessage] = useState({
     category: "",
     response: `Greetings ${playerInfo.name} from ${playerInfo.house}! \n Will you be able to find the right card? \n Click on a hint to begin...`,
@@ -38,16 +39,6 @@ export default function GamePage({ characters, playerInfo }) {
    * FUNCTIONS
    */
   const addMessage = (newMessage) => setMessage(newMessage);
-
-  // CURENTLY TESTING
-  const selectCard = (name) => setSelectedCard(name);
-
-  // CURENTLY TESTING
-  // const handleModal = (name, isOpen) => {
-  const handleModal = (isOpen) => {
-    setOpenModal(isOpen);
-    // setSelectedCard(name);
-  };
 
   /**
    * PAGE CONTENT
@@ -69,20 +60,22 @@ export default function GamePage({ characters, playerInfo }) {
             <BackCard />
             <CardBoard
               characters={filteredCharacters}
-              handleModal={handleModal}
-              selectCard={selectCard}
+              setIsModalOpen={setIsModalOpen}
+              setSelectedCard={setSelectedCard}
             />
             <ClueList addMessage={addMessage} />
           </div>
         </div>
-
-        {/* CURRENTLY TESTING */}
-        {openModal && (
-          <ModalConfirmCard
+        {isModalOpen && (
+          <ModalConfirm
             selectedCard={selectedCard}
-            handleModal={handleModal}
+            setSelectedCard={setSelectedCard}
+            setIsModalOpen={setIsModalOpen}
+            setIsEndGame={setIsEndGame}
           />
         )}
+        {/* CURRENTLY TESTING */}
+        {isEndGame && <ModalEndGame selectedCard={selectedCard} />}
       </Layout>
     </div>
   );

@@ -2,17 +2,24 @@ import PropTypes from "prop-types";
 
 import shortenName from "../helper/shortenName";
 
-export default function FrontCard({ name, image, handleModal, selectCard }) {
+export default function FrontCard({
+  name,
+  image,
+  setIsModalOpen,
+  setSelectedCard,
+}) {
   const nameShort = shortenName(name);
 
   const handleClick = () => {
-    selectCard(name);
-    handleModal(true);
+    setSelectedCard({ name, image });
+    setIsModalOpen(true);
   };
 
   return (
     <div className="relative flex h-[160px] w-[112px] flex-col items-center rounded-[6px] bg-[url('../assets/img/card-front-background.png')] bg-cover py-2">
-      <span className="font-ibarra text-base">{nameShort}</span>
+      <span className="font-ibarra text-base text-neutral-darkest">
+        {nameShort}
+      </span>
       <img
         src={image}
         alt={nameShort}
@@ -41,6 +48,11 @@ export default function FrontCard({ name, image, handleModal, selectCard }) {
 FrontCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
-  handleModal: PropTypes.func.isRequired,
-  selectCard: PropTypes.func.isRequired,
+  setIsModalOpen: PropTypes.func,
+  setSelectedCard: PropTypes.func,
+};
+
+FrontCard.defaultProps = {
+  setIsModalOpen: null,
+  setSelectedCard: null,
 };
