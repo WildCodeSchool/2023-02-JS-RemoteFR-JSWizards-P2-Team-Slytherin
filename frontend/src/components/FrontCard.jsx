@@ -1,9 +1,14 @@
 import PropTypes from "prop-types";
 
-export default function FrontCard({ name, image }) {
+export default function FrontCard({ name, image, handleModal, selectCard }) {
   const firstName = name.split(" ")[0].charAt(0);
   const lastName = name.split(" ")[1];
   const nameShort = `${firstName}. ${lastName}`;
+
+  const handleClick = () => {
+    selectCard(name);
+    handleModal(true);
+  };
 
   return (
     <div className="relative flex h-[160px] w-[112px] flex-col items-center rounded-[6px] bg-[url('../assets/img/card-front-background.png')] bg-cover py-2">
@@ -18,7 +23,11 @@ export default function FrontCard({ name, image }) {
         alt="golden frame decoration"
         className="absolute top-[55%] h-[120px] w-[104px] -translate-y-2/4"
       />
-      <button type="button" className="btn absolute bottom-1.5 right-0">
+      <button
+        type="button"
+        className="btn absolute bottom-1.5 right-0"
+        onClick={handleClick}
+      >
         <img
           src="../assets/img/card-front-validate.png"
           alt="golden snitch"
@@ -32,4 +41,6 @@ export default function FrontCard({ name, image }) {
 FrontCard.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  handleModal: PropTypes.func.isRequired,
+  selectCard: PropTypes.func.isRequired,
 };

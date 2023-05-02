@@ -8,26 +8,50 @@ import Score from "../components/Score";
 import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
+import ModalConfirmCard from "../components/ModalConfirmCard";
 
 import filterCharacters from "../helper/filterCharacters";
 import hatCard from "../helper/pickHatCard";
 
 export default function GamePage({ characters, playerInfo }) {
+  /**
+   * CONSTANTS
+   */
   const gameDuration = 60;
   const scoreStart = 1000;
 
+  /**
+   * STATES
+   */
   const [filteredCharacters] = useState(filterCharacters(characters, "image"));
   const [hatCardPick] = useState(hatCard(filteredCharacters));
-
+  // CURENTLY TESTING
+  const [openModal, setOpenModal] = useState(false);
+  // CURENTLY TESTING
+  const [selectedCard, setSelectedCard] = useState("");
   const [message, setMessage] = useState({
     category: "",
     response: `Greetings ${playerInfo.name} from ${playerInfo.house}! \n Will you be able to find the right card? \n Click on a hint to begin...`,
   });
 
-  const addMessage = (newMessage) => {
-    setMessage(newMessage);
+  /**
+   * FUNCTIONS
+   */
+  const addMessage = (newMessage) => setMessage(newMessage);
+
+  // CURENTLY TESTING
+  const selectCard = (name) => setSelectedCard(name);
+
+  // CURENTLY TESTING
+  // const handleModal = (name, isOpen) => {
+  const handleModal = (isOpen) => {
+    setOpenModal(isOpen);
+    // setSelectedCard(name);
   };
 
+  /**
+   * PAGE CONTENT
+   */
   return (
     <div className="bg-[url('../assets/img/background-game-screen-desktop.png')] bg-cover">
       <Layout>
@@ -43,15 +67,30 @@ export default function GamePage({ characters, playerInfo }) {
               playerInfo={playerInfo}
             />
             <BackCard />
-            <CardBoard characters={filteredCharacters} />
+            <CardBoard
+              characters={filteredCharacters}
+              handleModal={handleModal}
+              selectCard={selectCard}
+            />
             <ClueList addMessage={addMessage} />
           </div>
         </div>
+
+        {/* CURRENTLY TESTING */}
+        {openModal && (
+          <ModalConfirmCard
+            selectedCard={selectedCard}
+            handleModal={handleModal}
+          />
+        )}
       </Layout>
     </div>
   );
 }
 
+/**
+ * PROPTYPES
+ */
 GamePage.propTypes = {
   characters: PropTypes.arrayOf(
     PropTypes.shape({
