@@ -14,18 +14,21 @@ import hatCard from "../helper/pickHatCard";
 
 export default function GamePage({ characters, playerInfo }) {
   const gameDuration = 60;
-  const scoreStart = 1000;
+  const scoreStart = 1200;
 
+  const [score, setScore] = useState(scoreStart);
   const [filteredCharacters] = useState(filterCharacters(characters, "image"));
   const [hatCardPick] = useState(hatCard(filteredCharacters));
-
   const [message, setMessage] = useState({
     category: "",
     response: `Greetings ${playerInfo.name} from ${playerInfo.house}! \n Will you be able to find the right card? \n Click on a hint to begin...`,
   });
 
-  const addMessage = (newMessage) => {
-    setMessage(newMessage);
+  const addMessage = (newMessage) => setMessage(newMessage);
+  const zeroScore = () => setScore(0);
+  const decrementScore = (val) => {
+    if (val < score) return setScore((prevScore) => prevScore - val);
+    return zeroScore();
   };
 
   return (
@@ -33,8 +36,12 @@ export default function GamePage({ characters, playerInfo }) {
       <Layout>
         <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
           <div className="relative -top-7 mx-auto flex justify-center gap-16">
-            <Timer gameTime={gameDuration} />
-            <Score startingScore={scoreStart} />
+            <Timer
+              gameDuration={gameDuration}
+              decrementScore={decrementScore}
+              zeroScore={zeroScore}
+            />
+            <Score score={score} />
           </div>
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
             <SortingHat
@@ -44,7 +51,7 @@ export default function GamePage({ characters, playerInfo }) {
             />
             <BackCard />
             <CardBoard characters={filteredCharacters} />
-            <ClueList addMessage={addMessage} />
+            <ClueList addMessage={addMessage} decrementScore={decrementScore} />
           </div>
         </div>
       </Layout>

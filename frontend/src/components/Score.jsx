@@ -1,13 +1,6 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
 
-export default function Score({ startingScore }) {
-  const [score, setScore] = useState(null);
-
-  useEffect(() => {
-    setScore(startingScore);
-  }, []);
-
+export default function Score({ score }) {
   return (
     <div className="flex w-fit min-w-[210px] items-center justify-between gap-x-3 rounded-full border-2 border-secondary-lightest px-8 py-2 ">
       <div className="img-wrapper">
@@ -72,5 +65,5 @@ export default function Score({ startingScore }) {
 }
 
 Score.propTypes = {
-  startingScore: PropTypes.number.isRequired,
+  score: PropTypes.number.isRequired,
 };
