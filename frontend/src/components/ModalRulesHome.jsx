@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const ModalRulesHome = () => {
+function ModalRulesHome() {
   const [showModal, setShowModal] = useState(false);
   return (
     <>
@@ -48,27 +48,30 @@ const ModalRulesHome = () => {
               <img
                 className="inset-0 right-0 z-40 p-12 "
                 src="./assets/icon/close.svg"
+                alt="close button"
               />
             </button>
             <div className="fixed inset-y-80 end-52">
               <img
                 className="inset-0 z-40 h-96"
                 src="./assets/img/ink-feather.png"
+                alt="feather"
               />
             </div>
           </div>
 
-          <div className="fixed inset-0 z-30 bg-black opacity-70 "></div>
+          <div className="fixed inset-0 z-30 bg-black opacity-70 " />
           <div className="fixed inset-0 z-40 flex items-center justify-center backdrop-blur-sm">
             <img
               className="h-5/6"
               src="./assets/img/background-parchment-rules.png"
+              alt="parchment background"
             />
           </div>
         </>
       ) : null}
     </>
   );
-};
+}
 
 export default ModalRulesHome;

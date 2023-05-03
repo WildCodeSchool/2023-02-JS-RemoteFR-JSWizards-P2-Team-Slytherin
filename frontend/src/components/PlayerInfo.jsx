@@ -1,7 +1,6 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import PropTypes from "prop-types";
-import ModalRules from "./ModalRulesNavBar";
 import ModalRulesHome from "./ModalRulesHome";
 
 export default function PlayerInfo({ handleAddPlayerInfo }) {
