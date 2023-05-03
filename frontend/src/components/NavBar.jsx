@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import ModalRulesNavBar from "./ModalRulesNavBar";
 
 export default function NavBar() {
   return (
@@ -15,15 +16,7 @@ export default function NavBar() {
         </button>
         <ul id="menu" className="flex items-center gap-10">
           <li>
-            <button type="button">
-              <Link to="/rules">
-                <img
-                  src="../assets/icon/rules.svg"
-                  alt="Game rules"
-                  className="h-[30px]"
-                />
-              </Link>
-            </button>
+            <ModalRulesNavBar />
           </li>
           <li>
             <button type="button">
