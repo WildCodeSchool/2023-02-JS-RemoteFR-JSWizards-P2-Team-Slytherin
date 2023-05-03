@@ -8,9 +8,13 @@ export default function PlayerInfo() {
   const handleChangeFullName = (e) => setFullName(e.target.value);
   const handleSelectHouse = (e) => setHouseChoice(e.target.value);
 
-  const saveUser = () => localStorage.setItem("username", fullName);
+  const saveUser = () => {
+    const previousUsers = JSON.parse(localStorage.getItem("usernames")) || [];
+    const updatedUsers = [...previousUsers, fullName];
+    localStorage.setItem("usernames", JSON.stringify(updatedUsers));
+    localStorage.setItem("currentUsername", fullName);
+  };
 
-  console.log(saveUser);
   return (
     <form className="flex w-[398px] flex-col gap-[48px]">
       <div className="flex flex-col gap-[48px]">
