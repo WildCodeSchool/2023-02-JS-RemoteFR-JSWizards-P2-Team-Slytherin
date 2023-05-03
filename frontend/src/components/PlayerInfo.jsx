@@ -1,6 +1,7 @@
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import PropTypes from "prop-types";
+import ModalRulesHome from "./ModalRulesHome";
 
 export default function PlayerInfo({ handleAddPlayerInfo }) {
   const navigate = useNavigate();
@@ -64,12 +65,7 @@ export default function PlayerInfo({ handleAddPlayerInfo }) {
         </select>
       </label>
       <div className="flex flex-row justify-between">
-        <Link
-          className="form__btn border-2 border-transparent bg-primary-darkest/80 text-neutral-lightest backdrop-blur-[4px] hover:border-primary-darkest hover:bg-neutral-lightest/80 hover:text-primary-darkest"
-          to="/rules"
-        >
-          Rules
-        </Link>
+        <ModalRulesHome />
 
         <button
           type="submit"
