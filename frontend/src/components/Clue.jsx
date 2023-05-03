@@ -8,6 +8,7 @@ export default function Clue({
   category,
   response,
   addMessage,
+  decrementScore,
 }) {
   const [alreadyClicked, setAlreadyClicked] = useState(false);
 
@@ -18,6 +19,9 @@ export default function Clue({
     // 2. Send message related to the clicked clue to the dialog box with
     const newMessage = { category, response };
     addMessage(newMessage);
+
+    // 3. Decrement score
+    decrementScore(100);
   };
 
   return (
@@ -43,4 +47,5 @@ Clue.propTypes = {
   category: PropTypes.string.isRequired,
   response: PropTypes.string.isRequired,
   addMessage: PropTypes.func.isRequired,
+  decrementScore: PropTypes.func.isRequired,
 };

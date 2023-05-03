@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import clueList from "../data/clue_list.json";
 import Clue from "./Clue";
 
-export default function ClueList({ addMessage }) {
+export default function ClueList({ addMessage, decrementScore }) {
   const clues = clueList.slice(0, 6);
 
   return (
@@ -17,6 +17,7 @@ export default function ClueList({ addMessage }) {
           category={clue.category}
           response={clue.response}
           addMessage={addMessage}
+          decrementScore={decrementScore}
         />
       ))}
     </div>
@@ -25,4 +26,5 @@ export default function ClueList({ addMessage }) {
 
 ClueList.propTypes = {
   addMessage: PropTypes.func.isRequired,
+  decrementScore: PropTypes.func.isRequired,
 };

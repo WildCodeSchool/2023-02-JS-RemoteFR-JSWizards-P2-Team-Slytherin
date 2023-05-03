@@ -7,14 +7,18 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import displayTime from "../helper/displayTime";
 
-export default function Timer({ gameTime }) {
-  const [timer, setTimer] = useState(gameTime);
-
+export default function Timer({ gameDuration, decrementScore, zeroScore }) {
   let timerID = null;
+  const [timer, setTimer] = useState(gameDuration);
+
   useEffect(() => {
     if (timer > 0) {
-      timerID = setTimeout(() => setTimer(timer - 1), 1000);
+      timerID = setTimeout(() => {
+        setTimer(timer - 1);
+        decrementScore(10);
+      }, 1000);
     } else {
+      zeroScore();
       clearTimeout(timerID);
     }
     return function cleanUp() {
@@ -51,5 +55,7 @@ export default function Timer({ gameTime }) {
 }
 
 Timer.propTypes = {
-  gameTime: PropTypes.number.isRequired,
+  gameDuration: PropTypes.number.isRequired,
+  decrementScore: PropTypes.func.isRequired,
+  zeroScore: PropTypes.func.isRequired,
 };
