@@ -15,9 +15,7 @@ const ModalRulesHome = () => {
       {showModal ? (
         <>
           <div className="fixed inset-0 z-50 flex items-center justify-center outline-none focus:outline-none">
-            {/*content*/}
             <div className=" relative flex w-full max-w-sm flex-col items-center outline-none focus:outline-none">
-              {/*header*/}
               <img
                 className="w-24"
                 src="./assets/img/hogwarts-houses.png"
@@ -26,7 +24,7 @@ const ModalRulesHome = () => {
               <h3 className="text-center font-ibarra text-lg">
                 Welcome young wizard !
               </h3>
-              {/*body*/}
+
               <div className="relative p-6">
                 <p className="text-l my-4 text-center font-ibarra leading-relaxed text-black">
                   The goal is to find the character hidding behind the card of
@@ -41,7 +39,6 @@ const ModalRulesHome = () => {
                   <br /> Good Luckus Leviosa
                 </p>
               </div>
-              {/*footer*/}
             </div>
             <button
               className="fixed right-0 top-0"
@@ -61,7 +58,6 @@ const ModalRulesHome = () => {
             </div>
           </div>
 
-          {/*backgrounds*/}
           <div className="fixed inset-0 z-30 bg-black opacity-70 "></div>
           <div className="fixed inset-0 z-40 flex items-center justify-center backdrop-blur-sm">
             <img
