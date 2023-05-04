@@ -10,7 +10,7 @@ import displayTime from "../helper/displayTime";
 export default function Timer({
   gameDuration,
   decrementScore,
-  zeroScore, 
+  zeroScore,
   setIsEndGame }) {
   let timerID = null;
   const [timer, setTimer] = useState(gameDuration);
