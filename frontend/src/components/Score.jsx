@@ -1,36 +1,6 @@
-import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
-import Test from "@components/test"
-
-export default function Score({ startingScore }) {
-  const [score, setScore] = useState();
-
- /* useEffect(() => {
-    setScore(startingScore);
-  }, []);
-
-  useEffect(() => {
-    
-    const previousScoreBoard = JSON.parse(localStorage.getItem("scoresBoard"));
-    console.log(previousScoreBoard)
-    /if(previousScoreBoard !== null){
-      const playerScore = {
-        "playerName": localStorage.currentUsername,
-        "currentScore": score,
-      };
-      previousScoreBoard.push(playerScore)
-    }
-
-    localStorage.setItem("scoresBoard", JSON.stringify([previousScoreBoard]));
-*/
-
-  //}, [score]);
-
+export default function Score() {
   return (
-
-    <Test/>
-
-   /* <div className="flex w-fit min-w-[210px] items-center justify-between gap-x-3 rounded-full border-2 border-secondary-lightest px-8 py-2 ">
+    <div className="flex w-fit min-w-[210px] items-center justify-between gap-x-3 rounded-full border-2 border-secondary-lightest px-8 py-2 ">
       <div className="img-wrapper">
         <svg
           width="52"
@@ -86,15 +56,8 @@ export default function Score({ startingScore }) {
       </div>
 
       <span className="font-ibarra text-lg text-secondary-lightest">
-        {score} pts
+        XxX pts
       </span>
     </div>
-
-    </>
-  */
   );
 }
-
-Score.propTypes = {
-  startingScore: PropTypes.number.isRequired,
-};

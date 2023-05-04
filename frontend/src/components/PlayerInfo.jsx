@@ -7,14 +7,6 @@ export default function PlayerInfo() {
 
   const handleChangeFullName = (e) => setFullName(e.target.value);
   const handleSelectHouse = (e) => setHouseChoice(e.target.value);
-
-  const saveUser = () => {
-    // const previousUsers = JSON.parse(localStorage.getItem("usernames")) || [];
-    // const updatedUsers = [previousUsers, fullName];
-    // localStorage.setItem("usernames", JSON.stringify(updatedUsers));
-    localStorage.setItem("currentUsername", fullName);
-  };
-
   return (
     <form className="flex w-[398px] flex-col gap-[48px]">
       <div className="flex flex-col gap-[48px]">
@@ -54,7 +46,6 @@ export default function PlayerInfo() {
         <button
           type="button"
           className="w-[180px] rounded-full bg-secondary-dark/75 py-3 font-cinzel text-base text-neutral-lightest hover:bg-neutral-lightest/75 hover:text-secondary-dark"
-          onClick={saveUser}
         >
           <Link to="/game">Play now</Link>
         </button>
