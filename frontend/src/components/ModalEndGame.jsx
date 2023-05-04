@@ -2,19 +2,10 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
 import EndGameCard from "./EndGameCard";
 
-export default function ModalEndGame({
-  selectedCard,
-  hatCardPick,
-  playerInfo,
-  result,
-}) {
+export default function ModalEndGame({ selectedCard, hatCardPick, result }) {
   const { name: playerCardName, image: playerCardImage } = selectedCard;
   const { name: hatCardName, image: hatCardImage } = hatCardPick;
   const { success, heading, message } = result;
-
-  console.log("----modal-----");
-  console.log(result);
-  console.log(playerInfo);
 
   return (
     <div

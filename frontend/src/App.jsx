@@ -17,7 +17,8 @@ function App() {
   const API = "https://hp-api.onrender.com/api/characters";
   const GAME_SCORE_START = 1200;
   const GAME_DURATION = 60;
-  const LOCAL_STORAGE_KEY = "appGame.board";
+  const LOCAL_STORAGE_KEY_BOARD = "appGame.board";
+  const LOCAL_STORAGE_KEY_PLAYER = "appGame.player";
 
   /**
    * STATES
@@ -57,10 +58,25 @@ function App() {
   /**
    * LOCAL STORAGE
    */
+  // recall data from local storage (if any)
   useEffect(() => {
-    // console.log("useEffect runned");
-    // console.log(scoreBoard);
-    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(scoreBoard));
+    const storedPlayer = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_KEY_PLAYER)
+    );
+    if (storedPlayer) setPlayerInfo(storedPlayer);
+
+    const storedBoard = JSON.parse(
+      localStorage.getItem(LOCAL_STORAGE_KEY_BOARD)
+    );
+    if (storedBoard) setScoreBoard(storedBoard);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY_PLAYER, JSON.stringify(playerInfo));
+  }, [playerInfo]);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY_BOARD, JSON.stringify(scoreBoard));
   }, [scoreBoard]);
 
   /**

@@ -129,7 +129,6 @@ export default function GamePage({
           <ModalEndGame
             selectedCard={selectedCard}
             hatCardPick={hatCardPick}
-            playerInfo={playerInfo}
             result={result}
           />
         )}
