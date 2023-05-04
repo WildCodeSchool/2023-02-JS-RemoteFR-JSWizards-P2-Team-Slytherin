@@ -9,7 +9,11 @@ export default function ModalConfirm({
   const { name } = selectedCard;
 
   const handleClickConfirm = () => {
-    setIsEndGame(true);
+    // 1. set timer to pause...
+    // 2. recuperer le score et le remonter au parent...
+    // 3. trigger endgame screen
+    setIsEndGame((prev) => ({ ...prev, status: true }));
+    // 4. close confirmation modal
     setIsModalOpen(false);
   };
 

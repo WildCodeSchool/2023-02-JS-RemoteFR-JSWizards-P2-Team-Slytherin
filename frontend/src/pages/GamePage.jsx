@@ -27,8 +27,11 @@ export default function GamePage({ characters, playerInfo }) {
   const [filteredCharacters] = useState(filterCharacters(characters, "image"));
   const [hatCardPick] = useState(hatCard(filteredCharacters));
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedCard, setSelectedCard] = useState({ name: "toto", image: "" });
-  const [isEndGame, setIsEndGame] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({});
+  const [isEndGame, setIsEndGame] = useState({
+    status: false,
+    remainingTime: null,
+  });
 
   const [message, setMessage] = useState({
     category: "",
@@ -48,7 +51,7 @@ export default function GamePage({ characters, playerInfo }) {
       <Layout>
         <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
           <div className="relative -top-7 mx-auto flex justify-center gap-16">
-            <Timer gameTime={gameDuration} />
+            <Timer gameTime={gameDuration} setIsEndGame={setIsEndGame} />
             <Score startingScore={scoreStart} />
           </div>
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
@@ -74,8 +77,14 @@ export default function GamePage({ characters, playerInfo }) {
             setIsEndGame={setIsEndGame}
           />
         )}
-        {/* CURRENTLY TESTING */}
-        {isEndGame && <ModalEndGame selectedCard={selectedCard} />}
+        {isEndGame.status && (
+          <ModalEndGame
+            selectedCard={selectedCard}
+            hatCardPick={hatCardPick}
+            playerInfo={playerInfo}
+            remainingTime={isEndGame.remainingTime}
+          />
+        )}
       </Layout>
     </div>
   );
