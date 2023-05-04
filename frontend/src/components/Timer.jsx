@@ -7,7 +7,11 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import displayTime from "../helper/displayTime";
 
-export default function Timer({ gameDuration, decrementScore, zeroScore, setIsEndGame }) {
+export default function Timer({
+  gameDuration,
+  decrementScore,
+  zeroScore, 
+  setIsEndGame }) {
   let timerID = null;
   const [timer, setTimer] = useState(gameDuration);
 
