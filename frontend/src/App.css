@@ -45,6 +45,10 @@
   .form__btn {
     @apply flex w-[180px] items-center justify-center rounded-full py-3 font-cinzel text-base;
   }
+
+  .modal__btn {
+    @apply form__btn border border-white font-ibarra text-lg hover:bg-neutral-lightest hover:text-neutral-darkest;
+  }
 }
 
 /* Custom CSS rules for utilities (.layout, .shadow, ...) */

@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import BackCard from "./BackCard";
 import FrontCard from "./FrontCard";
 
-export default function Card({ name, image }) {
+export default function Card({ name, image, setIsModalOpen, setSelectedCard }) {
   const [showFront, setShowFront] = useState(true);
 
   const flipCardOnClick = (e) => {
@@ -26,7 +26,12 @@ export default function Card({ name, image }) {
         }`}
       >
         <div className="card-front absolute my-rotate-180 backface-hidden">
-          <FrontCard name={name} image={image} />
+          <FrontCard
+            name={name}
+            image={image}
+            setIsModalOpen={setIsModalOpen}
+            setSelectedCard={setSelectedCard}
+          />
         </div>
         <div className="card-back absolute backface-hidden">
           <BackCard />
@@ -39,4 +44,6 @@ export default function Card({ name, image }) {
 Card.propTypes = {
   name: PropTypes.string.isRequired,
   image: PropTypes.string.isRequired,
+  setIsModalOpen: PropTypes.func.isRequired,
+  setSelectedCard: PropTypes.func.isRequired,
 };

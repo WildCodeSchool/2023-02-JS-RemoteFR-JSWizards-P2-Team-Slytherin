@@ -8,23 +8,40 @@ import Score from "../components/Score";
 import Timer from "../components/Timer";
 import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
+import ModalConfirm from "../components/ModalConfirm";
+import ModalEndGame from "../components/ModalEndGame";
 import ModalCountDown from "../components/ModalCountDown";
 
 import filterCharacters from "../helper/filterCharacters";
 import hatCard from "../helper/pickHatCard";
 
 export default function GamePage({ characters, playerInfo }) {
+  /**
+   * CONSTANTS
+   */
   const gameDuration = 60;
   const scoreStart = 1200;
 
-  const [score, setScore] = useState(scoreStart);
+  /**
+   * STATES
+   */
   const [filteredCharacters] = useState(filterCharacters(characters, "image"));
   const [hatCardPick] = useState(hatCard(filteredCharacters));
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [selectedCard, setSelectedCard] = useState({});
+  const [score, setScore] = useState(scoreStart);
+  const [isEndGame, setIsEndGame] = useState({
+    status: false,
+    remainingTime: null,
+  });
   const [message, setMessage] = useState({
     category: "",
     response: `Greetings ${playerInfo.name} from ${playerInfo.house}! \n Will you be able to find the right card? \n Click on a hint to begin...`,
   });
 
+  /**
+   * FUNCTIONS
+   */
   const addMessage = (newMessage) => setMessage(newMessage);
   const zeroScore = () => setScore(0);
   const decrementScore = (val) => {
@@ -32,6 +49,9 @@ export default function GamePage({ characters, playerInfo }) {
     return zeroScore();
   };
 
+  /**
+   * PAGE CONTENT
+   */
   return (
     <div className="bg-[url('../assets/img/background-game-screen-desktop.png')] bg-cover">
       <Layout>
@@ -42,6 +62,7 @@ export default function GamePage({ characters, playerInfo }) {
               gameDuration={gameDuration}
               decrementScore={decrementScore}
               zeroScore={zeroScore}
+              setIsEndGame={setIsEndGame}
             />
             <Score score={score} />
           </div>
@@ -52,15 +73,38 @@ export default function GamePage({ characters, playerInfo }) {
               playerInfo={playerInfo}
             />
             <BackCard />
-            <CardBoard characters={filteredCharacters} />
+            <CardBoard
+              characters={filteredCharacters}
+              setIsModalOpen={setIsModalOpen}
+              setSelectedCard={setSelectedCard}
+            />
             <ClueList addMessage={addMessage} decrementScore={decrementScore} />
           </div>
         </div>
+        {isModalOpen && (
+          <ModalConfirm
+            selectedCard={selectedCard}
+            setSelectedCard={setSelectedCard}
+            setIsModalOpen={setIsModalOpen}
+            setIsEndGame={setIsEndGame}
+          />
+        )}
+        {isEndGame.status && (
+          <ModalEndGame
+            selectedCard={selectedCard}
+            hatCardPick={hatCardPick}
+            playerInfo={playerInfo}
+            remainingTime={isEndGame.remainingTime}
+          />
+        )}
       </Layout>
     </div>
   );
 }
 
+/**
+ * PROPTYPES
+ */
 GamePage.propTypes = {
   characters: PropTypes.arrayOf(
     PropTypes.shape({
