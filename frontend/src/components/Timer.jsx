@@ -7,20 +7,43 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import displayTime from "../helper/displayTime";
 
-export default function Timer({ gameTime }) {
-  const [timer, setTimer] = useState(gameTime);
-
+export default function Timer({
+  gameDuration,
+  decrementScore,
+  zeroScore,
+  setIsEndGame,
+  isPaused,
+}) {
   let timerID = null;
+  const [counter, setCounter] = useState(0);
+  const [timer, setTimer] = useState(gameDuration);
+
   useEffect(() => {
-    if (timer > 0) {
-      timerID = setTimeout(() => setTimer(timer - 1), 1000);
+    if (timer > 0 && !isPaused) {
+      timerID = setTimeout(() => {
+        setTimer((prev) => prev - 1);
+        // decrement score by 10pts/s every 10s
+        if (counter === 9) {
+          decrementScore(10 * 10);
+          setCounter(0);
+        } else {
+          setCounter((prev) => prev + 1);
+        }
+      }, 1000);
+    } else if (timer > 0 && isPaused) {
+      clearInterval(timerID);
     } else {
+      // trigger endgame screen
+      setIsEndGame((prev) => ({ ...prev, status: true, remainingTime: timer }));
+      // reset score
+      zeroScore();
+      // clear timer
       clearTimeout(timerID);
     }
     return function cleanUp() {
       clearInterval(timerID);
     };
-  }, [timer]);
+  }, [timer, isPaused]);
 
   return (
     <div className="flex w-fit min-w-[180px] items-center gap-x-3 rounded-full border-2 border-neutral-light px-8 py-2">
@@ -51,5 +74,9 @@ export default function Timer({ gameTime }) {
 }
 
 Timer.propTypes = {
-  gameTime: PropTypes.number.isRequired,
+  gameDuration: PropTypes.number.isRequired,
+  decrementScore: PropTypes.func.isRequired,
+  zeroScore: PropTypes.func.isRequired,
+  setIsEndGame: PropTypes.func.isRequired,
+  isPaused: PropTypes.bool.isRequired,
 };

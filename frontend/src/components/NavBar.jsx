@@ -1,4 +1,6 @@
 import { Link } from "react-router-dom";
+import ModalRulesNavBar from "./ModalRulesNavBar";
+import Music from "./Music";
 
 export default function NavBar() {
   return (
@@ -8,28 +10,20 @@ export default function NavBar() {
           <Link to="/">
             <img
               className="h-[68px] w-[180px]"
-              src="./assets/logo/logo-desktop.png"
+              src="../assets/logo/logo-desktop.png"
               alt="Return to homepage"
             />
           </Link>
         </button>
         <ul id="menu" className="flex items-center gap-10">
           <li>
-            <button type="button">
-              <Link to="/rules">
-                <img
-                  src="./assets/icon/rules.svg"
-                  alt="Game rules"
-                  className="h-[30px]"
-                />
-              </Link>
-            </button>
+            <ModalRulesNavBar />
           </li>
           <li>
             <button type="button">
               <Link to="/score">
                 <img
-                  src="./assets/icon/score.svg"
+                  src="../assets/icon/score.svg"
                   alt="Scores"
                   className="h-[30px]"
                 />
@@ -37,13 +31,7 @@ export default function NavBar() {
             </button>
           </li>
           <li>
-            <button type="button">
-              <img
-                src="./assets/icon/sound-on.svg"
-                alt="Sound on"
-                className="h-[30px]"
-              />
-            </button>
+            <Music />
           </li>
         </ul>
       </nav>
