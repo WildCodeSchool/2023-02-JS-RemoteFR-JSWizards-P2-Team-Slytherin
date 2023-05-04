@@ -11,20 +11,33 @@ import Page404 from "./pages/Page404";
 import "./App.css";
 
 function App() {
+  /**
+   * CONSTANTS
+   */
   const API = "https://hp-api.onrender.com/api/characters";
+  const GAME_SCORE_START = 1200;
 
+  /**
+   * STATES
+   */
   const [playerInfo, setPlayerInfo] = useState({
     name: "",
     house: "",
   });
+  const [score, setScore] = useState(GAME_SCORE_START);
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
 
+  /**
+   * FUNCTIONS
+   */
   const handleAddPlayerInfo = (player) => {
     setPlayerInfo(player);
   };
 
-  // Load data from API
+  /**
+   * Load data from API
+   */
   useEffect(() => {
     const controller = new AbortController();
     const { signal } = controller;
@@ -51,7 +64,12 @@ function App() {
           <Route
             path="game"
             element={
-              <GamePage characters={characters} playerInfo={playerInfo} />
+              <GamePage
+                characters={characters}
+                playerInfo={playerInfo}
+                score={score}
+                setScore={setScore}
+              />
             }
           />
 

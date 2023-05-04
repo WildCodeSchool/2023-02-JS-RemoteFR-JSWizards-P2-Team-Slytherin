@@ -15,12 +15,11 @@ import ModalCountDown from "../components/ModalCountDown";
 import filterCharacters from "../helper/filterCharacters";
 import hatCard from "../helper/pickHatCard";
 
-export default function GamePage({ characters, playerInfo }) {
+export default function GamePage({ characters, playerInfo, score, setScore }) {
   /**
    * CONSTANTS
    */
   const gameDuration = 60;
-  const scoreStart = 1200;
 
   /**
    * STATES
@@ -29,7 +28,6 @@ export default function GamePage({ characters, playerInfo }) {
   const [hatCardPick] = useState(hatCard(filteredCharacters));
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
-  const [score, setScore] = useState(scoreStart);
   const [isPaused, setisPaused] = useState(true);
   const [isEndGame, setIsEndGame] = useState({
     status: false,
@@ -121,4 +119,6 @@ GamePage.propTypes = {
     name: PropTypes.string.isRequired,
     house: PropTypes.string.isRequired,
   }).isRequired,
+  score: PropTypes.number.isRequired,
+  setScore: PropTypes.func.isRequired,
 };
