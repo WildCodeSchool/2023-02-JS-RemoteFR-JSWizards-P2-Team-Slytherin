@@ -41,14 +41,14 @@ export default function ModalConfirm({
             className="modal__btn w-fit border px-8  py-1 text-[20px]"
             onClick={handleClickConfirm}
           >
-            ✅ Yes
+            ✅ yes
           </button>
           <button
             type="button"
             className="modal__btn w-fit border px-8 py-1 text-[20px]"
             onClick={handleClickCancel}
           >
-            ❌ No
+            ❌ no
           </button>
         </div>
       </div>
