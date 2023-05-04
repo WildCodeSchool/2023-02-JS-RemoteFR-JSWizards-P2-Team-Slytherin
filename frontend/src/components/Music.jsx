@@ -31,9 +31,9 @@ function Music(
         onLoading={handleSongLoading}
         onPlaying={handleSongPlaying}
         volume={40}
-        loop={true}
+        loop
         onFinishedPlaying={handleSongFinishedPlaying}
-        autoLoad={true}
+        autoLoad
       />
     </div>
   );
