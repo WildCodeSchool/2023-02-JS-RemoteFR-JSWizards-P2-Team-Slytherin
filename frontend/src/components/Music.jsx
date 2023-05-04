@@ -2,7 +2,7 @@
 import Sound from "react-sound";
 import { useState } from "react";
 
-function Music(handleSongPlaying, handleSongFinishedPlaying) {
+function Music() {
   const [isPlaying, setIsPlaying] = useState(false);
   return (
     <div>
