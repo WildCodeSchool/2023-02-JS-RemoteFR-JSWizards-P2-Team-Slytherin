@@ -1,19 +1,36 @@
 import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
+import Test from "@components/test"
 
 export default function Score({ startingScore }) {
-  const [score, setScore] = useState(null);
+  const [score, setScore] = useState();
 
-  useEffect(() => {
+ /* useEffect(() => {
     setScore(startingScore);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("score", score);
-  }, [score]);
+    
+    const previousScoreBoard = JSON.parse(localStorage.getItem("scoresBoard"));
+    console.log(previousScoreBoard)
+    /if(previousScoreBoard !== null){
+      const playerScore = {
+        "playerName": localStorage.currentUsername,
+        "currentScore": score,
+      };
+      previousScoreBoard.push(playerScore)
+    }
+
+    localStorage.setItem("scoresBoard", JSON.stringify([previousScoreBoard]));
+*/
+
+  //}, [score]);
 
   return (
-    <div className="flex w-fit min-w-[210px] items-center justify-between gap-x-3 rounded-full border-2 border-secondary-lightest px-8 py-2 ">
+
+    <Test/>
+
+   /* <div className="flex w-fit min-w-[210px] items-center justify-between gap-x-3 rounded-full border-2 border-secondary-lightest px-8 py-2 ">
       <div className="img-wrapper">
         <svg
           width="52"
@@ -72,6 +89,9 @@ export default function Score({ startingScore }) {
         {score} pts
       </span>
     </div>
+
+    </>
+  */
   );
 }
 

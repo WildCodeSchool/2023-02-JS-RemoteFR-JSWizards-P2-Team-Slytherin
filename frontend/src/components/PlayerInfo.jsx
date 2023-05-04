@@ -9,9 +9,9 @@ export default function PlayerInfo() {
   const handleSelectHouse = (e) => setHouseChoice(e.target.value);
 
   const saveUser = () => {
-    const previousUsers = JSON.parse(localStorage.getItem("usernames")) || [];
-    const updatedUsers = [...previousUsers, fullName];
-    localStorage.setItem("usernames", JSON.stringify(updatedUsers));
+    // const previousUsers = JSON.parse(localStorage.getItem("usernames")) || [];
+    // const updatedUsers = [previousUsers, fullName];
+    // localStorage.setItem("usernames", JSON.stringify(updatedUsers));
     localStorage.setItem("currentUsername", fullName);
   };
 
