@@ -20,11 +20,6 @@ function App() {
   /**
    * STATES
    */
-  // const [playerInfo, setPlayerInfo] = useState({
-  //   name: "",
-  //   house: "",
-  //   score: null,
-  // });
   const [playerInfo, setPlayerInfo] = useState({});
   const [score, setScore] = useState(GAME_SCORE_START);
   const [loading, setLoading] = useState(true);
