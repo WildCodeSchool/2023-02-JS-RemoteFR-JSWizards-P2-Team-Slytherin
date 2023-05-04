@@ -20,11 +20,12 @@ function App() {
   /**
    * STATES
    */
-  const [playerInfo, setPlayerInfo] = useState({
-    name: "",
-    house: "",
-    score: null,
-  });
+  // const [playerInfo, setPlayerInfo] = useState({
+  //   name: "",
+  //   house: "",
+  //   score: null,
+  // });
+  const [playerInfo, setPlayerInfo] = useState({});
   const [score, setScore] = useState(GAME_SCORE_START);
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
@@ -32,9 +33,7 @@ function App() {
   /**
    * FUNCTIONS
    */
-  const handleAddPlayerInfo = (player) => {
-    setPlayerInfo(player);
-  };
+  const handleAddPlayerInfo = (player) => setPlayerInfo(player);
 
   /**
    * Load data from API
