@@ -14,30 +14,31 @@ function ModalRulesHome() {
 
       {showModal ? (
         <>
-          <div className="fixed inset-0 z-50 flex items-center justify-center outline-none focus:outline-none">
+          <div className="fixed inset-0 z-50 flex items-center justify-center font-ibarra text-neutral-darkest outline-none focus:outline-none">
             <div className=" relative flex w-full max-w-sm flex-col items-center outline-none focus:outline-none">
               <img
-                className="w-24"
+                className="mb-4 w-24"
                 src="./assets/img/hogwarts-houses.png"
                 alt="Hogwarts houses logo"
               />
-              <h3 className="text-center font-ibarra text-lg">
-                Welcome young wizard !
+              <h3 className="mb-4 text-center font-cinzel text-lg">
+                Welcome Young Wizard !
               </h3>
 
-              <div className="relative p-6">
-                <p className="text-l my-4 text-center font-ibarra leading-relaxed text-black">
+              <div className="relative flex flex-col gap-4 pr-6 text-base">
+                <p>
                   The goal is to find the character hidding behind the card of
-                  the sorting hat. For that, a list of clues containing the
-                  attributes of the character in question is available to help
-                  you to make the right choices. But be careful, the time is
-                  limited and the more time and clues you take, the less points
-                  you have. <br />
-                  When you want to eliminate a card, click on it to flip it. If
-                  you think you know which card has the Sorting Hat, click on
-                  the Golden snitch to verify the card and end the game.
-                  <br /> Good Luckus Leviosa
+                  the Sorting Hat. A list of clues containing the attributes of
+                  the character in question is available to help you to make the
+                  right choices. But be careful, the time is limited and the
+                  more time and clues you take, the less points you have.
                 </p>
+                <p>Click on it to flip it.</p>
+                <p>
+                  If you think you know which card has the Sorting Hat, click on
+                  the Golden snitch to verify the card and end the game.
+                </p>
+                <p className="text-[20px]">Good Luckus Leviosa</p>
               </div>
             </div>
             <button
