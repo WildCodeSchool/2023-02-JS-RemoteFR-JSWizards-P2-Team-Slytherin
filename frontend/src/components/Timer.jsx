@@ -11,8 +11,8 @@ export default function Timer({
   gameDuration,
   decrementScore,
   zeroScore,
-  setIsEndGame
-  }) {
+  setIsEndGame,
+}) {
   let timerID = null;
   const [timer, setTimer] = useState(gameDuration);
 
