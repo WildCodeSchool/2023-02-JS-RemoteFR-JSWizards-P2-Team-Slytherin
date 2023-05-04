@@ -68,11 +68,7 @@ export default function GamePage({ characters, playerInfo, score, setScore }) {
             <Score score={score} />
           </div>
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
-            <SortingHat
-              message={message}
-              hatCardPick={hatCardPick}
-              playerInfo={playerInfo}
-            />
+            <SortingHat message={message} hatCardPick={hatCardPick} />
             <BackCard />
             <CardBoard
               characters={filteredCharacters}
@@ -116,9 +112,18 @@ GamePage.propTypes = {
     })
   ).isRequired,
   playerInfo: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    house: PropTypes.string.isRequired,
-  }).isRequired,
+    name: PropTypes.string,
+    house: PropTypes.string,
+    score: PropTypes.number,
+  }),
   score: PropTypes.number.isRequired,
   setScore: PropTypes.func.isRequired,
+};
+
+GamePage.defaultProps = {
+  playerInfo: PropTypes.shape({
+    name: "",
+    house: "",
+    score: null,
+  }),
 };
