@@ -1,6 +1,5 @@
 import Sound from "react-sound";
 import { useState } from "react";
-import music from "../helper/music.mp3";
 
 function Music(
   handleSongLoading,
@@ -26,7 +25,7 @@ function Music(
         )}
       </button>
       <Sound
-        url={music}
+        url="../assets/music/music.mp3"
         playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.PAUSED}
         onLoading={handleSongLoading}
         onPlaying={handleSongPlaying}
