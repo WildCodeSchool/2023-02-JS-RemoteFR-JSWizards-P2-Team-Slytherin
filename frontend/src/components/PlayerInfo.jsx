@@ -31,7 +31,7 @@ export default function PlayerInfo({ handleAddPlayerInfo }) {
     const { name, value } = event.target;
     setPlayer({ ...player, [name]: value });
   };
-  
+ 
   return (
     <form className="flex flex-col gap-[48px]" onSubmit={handleSubmit}>
       <label htmlFor="username" className="form__label">
