@@ -1,12 +1,9 @@
+/* eslint-disable-next-line */
 import Sound from "react-sound";
 import { useState } from "react";
 
-function Music(
-  handleSongLoading,
-  handleSongPlaying,
-  handleSongFinishedPlaying
-) {
-  const [isPlaying, setIsPlaying] = useState(true);
+function Music(handleSongPlaying, handleSongFinishedPlaying) {
+  const [isPlaying, setIsPlaying] = useState(false);
   return (
     <div>
       <button type="button" onClick={() => setIsPlaying(!isPlaying)}>
@@ -27,12 +24,7 @@ function Music(
       <Sound
         url="../assets/music/music.mp3"
         playStatus={isPlaying ? Sound.status.PLAYING : Sound.status.PAUSED}
-        onLoading={handleSongLoading}
-        onPlaying={handleSongPlaying}
         volume={40}
-        loop
-        onFinishedPlaying={handleSongFinishedPlaying}
-        autoLoad
       />
     </div>
   );
