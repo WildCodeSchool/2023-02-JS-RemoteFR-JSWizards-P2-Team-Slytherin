@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-export default function Score({ score }) {
+export default function Score() {
   return (
     <div className="flex w-fit min-w-[210px] items-center justify-between gap-x-3 rounded-full border-2 border-secondary-lightest px-8 py-2 ">
       <div className="img-wrapper">
@@ -63,7 +63,3 @@ export default function Score({ score }) {
     </div>
   );
 }
-
-Score.propTypes = {
-  score: PropTypes.number.isRequired,
-};
