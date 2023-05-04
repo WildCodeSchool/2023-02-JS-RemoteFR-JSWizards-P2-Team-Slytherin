@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import ModalRulesNavBar from "./ModalRulesNavBar";
+import Music from "./Music";
 
 export default function NavBar() {
   return (
@@ -30,13 +31,7 @@ export default function NavBar() {
             </button>
           </li>
           <li>
-            <button type="button">
-              <img
-                src="../assets/icon/sound-on.svg"
-                alt="Sound on"
-                className="h-[30px]"
-              />
-            </button>
+            <Music />
           </li>
         </ul>
       </nav>
