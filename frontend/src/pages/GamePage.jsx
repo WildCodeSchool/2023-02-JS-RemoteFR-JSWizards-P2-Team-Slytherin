@@ -30,6 +30,7 @@ export default function GamePage({ characters, playerInfo }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
   const [score, setScore] = useState(scoreStart);
+  const [isPaused, setisPaused] = useState(true);
   const [isEndGame, setIsEndGame] = useState({
     status: false,
     remainingTime: null,
@@ -44,6 +45,7 @@ export default function GamePage({ characters, playerInfo }) {
    */
   const addMessage = (newMessage) => setMessage(newMessage);
   const zeroScore = () => setScore(0);
+  const pauseTimer = () => setisPaused(!isPaused);
   const decrementScore = (val) => {
     if (val < score) return setScore((prevScore) => prevScore - val);
     return zeroScore();
@@ -57,12 +59,13 @@ export default function GamePage({ characters, playerInfo }) {
       <Layout>
         <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
           <div className="relative -top-7 mx-auto flex justify-center gap-16">
-            <ModalCountDown />
+            <ModalCountDown pauseTimer={pauseTimer} />
             <Timer
               gameDuration={gameDuration}
               decrementScore={decrementScore}
               zeroScore={zeroScore}
               setIsEndGame={setIsEndGame}
+              isPaused={isPaused}
             />
             <Score score={score} />
           </div>
@@ -87,6 +90,7 @@ export default function GamePage({ characters, playerInfo }) {
             setSelectedCard={setSelectedCard}
             setIsModalOpen={setIsModalOpen}
             setIsEndGame={setIsEndGame}
+            pauseTimer={pauseTimer}
           />
         )}
         {isEndGame.status && (

@@ -1,15 +1,24 @@
+import PropTypes from "prop-types";
 import { useState, useEffect } from "react";
 import CountDown from "./CountDown";
 
-function ModalCountDown() {
+function ModalCountDown({ pauseTimer }) {
   const [showModal, setShowModal] = useState(true);
+  let timeoutID = null;
 
   useEffect(() => {
     if (showModal) {
-      setTimeout(() => {
+      timeoutID = setTimeout(() => {
         setShowModal(false);
-      }, 2800);
+      }, 2999);
     }
+    return function cleanUp() {
+      clearTimeout(timeoutID);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (!showModal) pauseTimer();
   }, [showModal]);
 
   return (
@@ -34,3 +43,7 @@ function ModalCountDown() {
 }
 
 export default ModalCountDown;
+
+ModalCountDown.propTypes = {
+  pauseTimer: PropTypes.func.isRequired,
+};

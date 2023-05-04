@@ -5,11 +5,13 @@ export default function ModalConfirm({
   setIsModalOpen,
   setSelectedCard,
   setIsEndGame,
+  pauseTimer,
 }) {
   const { name } = selectedCard;
 
   const handleClickConfirm = () => {
-    // 1. set timer to pause...
+    // 1. set timer to pause
+    pauseTimer();
     // 2. recuperer le score et le remonter au parent...
     // 3. trigger endgame screen
     setIsEndGame((prev) => ({ ...prev, status: true }));
@@ -62,4 +64,5 @@ ModalConfirm.propTypes = {
   setSelectedCard: PropTypes.func.isRequired,
   setIsModalOpen: PropTypes.func.isRequired,
   setIsEndGame: PropTypes.func.isRequired,
+  pauseTimer: PropTypes.func.isRequired,
 };
