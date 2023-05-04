@@ -24,17 +24,38 @@ function App() {
    */
   const [playerInfo, setPlayerInfo] = useState({});
   const [score, setScore] = useState(GAME_SCORE_START);
+  const [scoreBoard, setScoreBoard] = useState([]);
   const [loading, setLoading] = useState(true);
   const [characters, setCharacters] = useState([]);
 
   /**
    * FUNCTIONS
    */
-  const handleAddPlayerInfo = (player) => setPlayerInfo(player);
+  const updateScoreBoard = (player) => {
+    // check if scoreBoard not empty
+    if (scoreBoard.length !== 0) {
+      // clone current state
+      const cloneScoreBoard = [...scoreBoard];
+      // check whether player already exists
+      const existingPlayer = scoreBoard.find((obj) => obj.name === player.name);
+      // if so, overwrite player info
+      if (existingPlayer) {
+        return setScoreBoard();
+      }
+    }
+    // otherwise append new player info
+  };
+
+  const handleAddPlayerInfo = (player) => {
+    setPlayerInfo(player);
+  };
 
   /**
    * LOCAL STORAGE
    */
+  useEffect(() => {
+    console.log("useEffect runned");
+  }, [scoreBoard]);
 
   /**
    * API
@@ -48,7 +69,7 @@ function App() {
       .then((response) => setCharacters(response.data))
       .catch((error) => console.error(`Download error: ${error.message}`))
       .finally(() => setLoading(false));
-    // Cancel current API request on component unmount
+    // cancel current API request on component unmount
     return function cleanup() {
       controller.abort();
     };
