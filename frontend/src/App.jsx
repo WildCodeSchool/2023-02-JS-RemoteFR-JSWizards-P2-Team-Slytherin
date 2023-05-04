@@ -32,29 +32,35 @@ function App() {
    * FUNCTIONS
    */
   const updateScoreBoard = (player) => {
-    // check if scoreBoard not empty
-    if (scoreBoard.length !== 0) {
-      // clone current state
-      const cloneScoreBoard = [...scoreBoard];
-      // check whether player already exists
-      const existingPlayer = scoreBoard.find((obj) => obj.name === player.name);
-      // if so, overwrite player info
-      if (existingPlayer) {
-        return setScoreBoard();
+    // scoreBoard empty? simply add the new player
+    if (scoreBoard.length === 0) {
+      setScoreBoard([...scoreBoard, player]);
+    } else {
+      // check whether player already exists, if so overwrite player info
+      const match = scoreBoard.find((obj) => obj.name === player.name);
+      // if so, overwrite player info otherwise simply append the new player
+      if (match) {
+        setScoreBoard(
+          scoreBoard.map((play) => (play.name === match.name ? player : play))
+        );
+      } else {
+        setScoreBoard([...scoreBoard, player]);
       }
     }
-    // otherwise append new player info
   };
 
   const handleAddPlayerInfo = (player) => {
     setPlayerInfo(player);
+    updateScoreBoard(player);
   };
 
   /**
    * LOCAL STORAGE
    */
   useEffect(() => {
-    console.log("useEffect runned");
+    // console.log("useEffect runned");
+    // console.log(scoreBoard);
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(scoreBoard));
   }, [scoreBoard]);
 
   /**
