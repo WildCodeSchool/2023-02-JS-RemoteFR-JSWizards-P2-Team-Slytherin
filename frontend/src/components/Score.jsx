@@ -1,4 +1,6 @@
-export default function Score() {
+import PropTypes from "prop-types";
+
+export default function Score({ score }) {
   return (
     <div className="flex w-fit min-w-[210px] items-center justify-between gap-x-3 rounded-full border-2 border-secondary-lightest px-8 py-2 ">
       <div className="img-wrapper">
@@ -56,8 +58,12 @@ export default function Score() {
       </div>
 
       <span className="font-ibarra text-lg text-secondary-lightest">
-        XxX pts
+        {score} pts
       </span>
     </div>
   );
 }
+
+Score.propTypes = {
+  score: PropTypes.number.isRequired,
+};

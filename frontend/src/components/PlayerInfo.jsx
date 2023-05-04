@@ -9,20 +9,18 @@ export default function PlayerInfo({ handleAddPlayerInfo }) {
   const [player, setPlayer] = useState({
     name: "",
     house: "",
+    score: null,
   });
 
   const handleSubmit = (event) => {
     // 1. Prevent the page to be refreshed
     event.preventDefault();
-
-    // 2. Check data before sending
+    // 2. Check player info before sending
     const newPlayer = { ...player };
     if (!player.name) newPlayer.name = "Dobby";
     if (!player.house) newPlayer.house = "unknown magic school";
-
     // 3. Send all PlayerInfo to the parent App
     handleAddPlayerInfo(newPlayer);
-
     // 4. Redirect to the GamePAge
     navigate("/game");
   };

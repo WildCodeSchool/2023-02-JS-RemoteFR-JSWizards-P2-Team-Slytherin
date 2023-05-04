@@ -15,13 +15,20 @@ export default function Timer({
   isPaused,
 }) {
   let timerID = null;
+  const [counter, setCounter] = useState(0);
   const [timer, setTimer] = useState(gameDuration);
 
   useEffect(() => {
     if (timer > 0 && !isPaused) {
       timerID = setTimeout(() => {
-        setTimer(timer - 1);
-        decrementScore(10);
+        setTimer((prev) => prev - 1);
+        // decrement score by 10pts/s every 10s
+        if (counter === 9) {
+          decrementScore(10 * 10);
+          setCounter(0);
+        } else {
+          setCounter((prev) => prev + 1);
+        }
       }, 1000);
     } else if (timer > 0 && isPaused) {
       clearInterval(timerID);
