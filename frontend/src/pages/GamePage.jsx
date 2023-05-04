@@ -15,12 +15,13 @@ import ModalCountDown from "../components/ModalCountDown";
 import filterCharacters from "../helper/filterCharacters";
 import hatCard from "../helper/pickHatCard";
 
-export default function GamePage({ characters, playerInfo, score, setScore }) {
-  /**
-   * CONSTANTS
-   */
-  const gameDuration = 60;
-
+export default function GamePage({
+  characters,
+  playerInfo,
+  score,
+  setScore,
+  gameDuration,
+}) {
   /**
    * STATES
    */
@@ -118,6 +119,7 @@ GamePage.propTypes = {
   }),
   score: PropTypes.number.isRequired,
   setScore: PropTypes.func.isRequired,
+  gameDuration: PropTypes.number.isRequired,
 };
 
 GamePage.defaultProps = {

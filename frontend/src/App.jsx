@@ -16,6 +16,8 @@ function App() {
    */
   const API = "https://hp-api.onrender.com/api/characters";
   const GAME_SCORE_START = 1200;
+  const GAME_DURATION = 60;
+  const LOCAL_STORAGE_KEY = "appGame.board";
 
   /**
    * STATES
@@ -31,7 +33,11 @@ function App() {
   const handleAddPlayerInfo = (player) => setPlayerInfo(player);
 
   /**
-   * Load data from API
+   * LOCAL STORAGE
+   */
+
+  /**
+   * API
    */
   useEffect(() => {
     const controller = new AbortController();
@@ -64,6 +70,7 @@ function App() {
                 playerInfo={playerInfo}
                 score={score}
                 setScore={setScore}
+                gameDuration={GAME_DURATION}
               />
             }
           />
