@@ -49,7 +49,7 @@ function App() {
     }
   };
 
-  const handleAddPlayerInfo = (player) => {
+  const updatePlayerInfo = (player) => {
     setPlayerInfo(player);
     updateScoreBoard(player);
   };
@@ -87,7 +87,7 @@ function App() {
         <Routes>
           <Route
             path="/"
-            element={<HomePage handleAddPlayerInfo={handleAddPlayerInfo} />}
+            element={<HomePage updatePlayerInfo={updatePlayerInfo} />}
           />
           <Route
             path="game"
@@ -98,6 +98,7 @@ function App() {
                 score={score}
                 setScore={setScore}
                 gameDuration={GAME_DURATION}
+                updatePlayerInfo={updatePlayerInfo}
               />
             }
           />

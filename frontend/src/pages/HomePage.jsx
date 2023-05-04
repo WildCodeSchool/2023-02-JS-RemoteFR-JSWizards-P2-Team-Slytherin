@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import Layout from "../components/Layout";
 import PlayerInfo from "../components/PlayerInfo";
 
-export default function HomePage({ handleAddPlayerInfo }) {
+export default function HomePage({ updatePlayerInfo }) {
   return (
     <div className="bg-[url('../assets/img/background-welcome-screen-desktop.png')] bg-cover bg-left-bottom">
       <Layout>
@@ -14,7 +14,7 @@ export default function HomePage({ handleAddPlayerInfo }) {
           </h2>
         </div>
         <div className="mr-16 flex justify-end">
-          <PlayerInfo handleAddPlayerInfo={handleAddPlayerInfo} />
+          <PlayerInfo updatePlayerInfo={updatePlayerInfo} />
         </div>
       </Layout>
     </div>
@@ -22,5 +22,5 @@ export default function HomePage({ handleAddPlayerInfo }) {
 }
 
 HomePage.propTypes = {
-  handleAddPlayerInfo: PropTypes.func.isRequired,
+  updatePlayerInfo: PropTypes.func.isRequired,
 };

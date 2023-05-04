@@ -1,26 +1,20 @@
 import PropTypes from "prop-types";
-
 import { Link } from "react-router-dom";
-
 import EndGameCard from "./EndGameCard";
-import checkEndGame from "../helper/checkEndGame";
 
 export default function ModalEndGame({
   selectedCard,
   hatCardPick,
   playerInfo,
-  remainingTime,
+  result,
 }) {
   const { name: playerCardName, image: playerCardImage } = selectedCard;
   const { name: hatCardName, image: hatCardImage } = hatCardPick;
-  const { name: playerName } = playerInfo;
+  const { success, heading, message } = result;
 
-  const { status, heading, message } = checkEndGame(
-    playerCardName,
-    hatCardName,
-    playerName,
-    remainingTime
-  );
+  console.log("----modal-----");
+  console.log(result);
+  console.log(playerInfo);
 
   return (
     <div
@@ -35,7 +29,7 @@ export default function ModalEndGame({
         <h2 className="font-ibarra text-xl">{message}</h2>
 
         {/* display cards only if not game over */}
-        {status ? (
+        {success || heading.toLowerCase().includes("loose") ? (
           <div className="flex items-center gap-32">
             <div className="flex flex-col gap-4">
               <EndGameCard name={playerCardName} image={playerCardImage} />
@@ -92,15 +86,25 @@ ModalEndGame.propTypes = {
     house: PropTypes.string,
     score: PropTypes.number,
   }),
-  remainingTime: PropTypes.number,
+  // remainingTime: PropTypes.number,
+  result: PropTypes.shape({
+    success: PropTypes.bool,
+    heading: PropTypes.string,
+    message: PropTypes.string,
+  }),
 };
 
 ModalEndGame.defaultProps = {
-  remainingTime: null,
+  // remainingTime: null,
   selectedCard: null,
   playerInfo: PropTypes.shape({
     name: "",
     house: "",
     score: null,
+  }),
+  result: PropTypes.shape({
+    success: null,
+    heading: "",
+    message: "",
   }),
 };
