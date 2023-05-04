@@ -7,16 +7,21 @@ import { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import displayTime from "../helper/displayTime";
 
-export default function Timer({ gameTime, setIsEndGame }) {
-  const [timer, setTimer] = useState(gameTime);
-
+export default function Timer({ gameDuration, decrementScore, zeroScore, setIsEndGame }) {
   let timerID = null;
+  const [timer, setTimer] = useState(gameDuration);
+
   useEffect(() => {
     if (timer > 0) {
-      timerID = setTimeout(() => setTimer(timer - 1), 1000);
+      timerID = setTimeout(() => {
+        setTimer(timer - 1);
+        decrementScore(10);
+      }, 1000);
     } else {
       // trigger endgame screen
       setIsEndGame((prev) => ({ ...prev, status: true, remainingTime: timer }));
+      // reset score
+      zeroScore();
       // clear timer
       clearTimeout(timerID);
     }
@@ -54,6 +59,8 @@ export default function Timer({ gameTime, setIsEndGame }) {
 }
 
 Timer.propTypes = {
-  gameTime: PropTypes.number.isRequired,
+  gameDuration: PropTypes.number.isRequired,
+  decrementScore: PropTypes.func.isRequired,
+  zeroScore: PropTypes.func.isRequired,
   setIsEndGame: PropTypes.func.isRequired,
 };

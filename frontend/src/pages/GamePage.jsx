@@ -10,6 +10,7 @@ import BackCard from "../components/BackCard";
 import ClueList from "../components/ClueList";
 import ModalConfirm from "../components/ModalConfirm";
 import ModalEndGame from "../components/ModalEndGame";
+import ModalCountDown from "../components/ModalCountDown";
 
 import filterCharacters from "../helper/filterCharacters";
 import hatCard from "../helper/pickHatCard";
@@ -19,7 +20,7 @@ export default function GamePage({ characters, playerInfo }) {
    * CONSTANTS
    */
   const gameDuration = 60;
-  const scoreStart = 1000;
+  const scoreStart = 1200;
 
   /**
    * STATES
@@ -28,11 +29,11 @@ export default function GamePage({ characters, playerInfo }) {
   const [hatCardPick] = useState(hatCard(filteredCharacters));
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
+  const [score, setScore] = useState(scoreStart);
   const [isEndGame, setIsEndGame] = useState({
     status: false,
     remainingTime: null,
   });
-
   const [message, setMessage] = useState({
     category: "",
     response: `Greetings ${playerInfo.name} from ${playerInfo.house}! \n Will you be able to find the right card? \n Click on a hint to begin...`,
@@ -42,6 +43,11 @@ export default function GamePage({ characters, playerInfo }) {
    * FUNCTIONS
    */
   const addMessage = (newMessage) => setMessage(newMessage);
+  const zeroScore = () => setScore(0);
+  const decrementScore = (val) => {
+    if (val < score) return setScore((prevScore) => prevScore - val);
+    return zeroScore();
+  };
 
   /**
    * PAGE CONTENT
@@ -51,8 +57,14 @@ export default function GamePage({ characters, playerInfo }) {
       <Layout>
         <div className="layout-wrapper grid min-h-full grid-rows-[auto_1fr] justify-items-center">
           <div className="relative -top-7 mx-auto flex justify-center gap-16">
-            <Timer gameTime={gameDuration} setIsEndGame={setIsEndGame} />
-            <Score startingScore={scoreStart} />
+            <ModalCountDown />
+            <Timer
+              gameDuration={gameDuration}
+              decrementScore={decrementScore}
+              zeroScore={zeroScore}
+              setIsEndGame={setIsEndGame}
+            />
+            <Score score={score} />
           </div>
           <div className="relative -top-3 grid min-h-full w-full grid-cols-[2fr_minmax(auto,1fr)] place-items-center">
             <SortingHat
@@ -66,7 +78,7 @@ export default function GamePage({ characters, playerInfo }) {
               setIsModalOpen={setIsModalOpen}
               setSelectedCard={setSelectedCard}
             />
-            <ClueList addMessage={addMessage} />
+            <ClueList addMessage={addMessage} decrementScore={decrementScore} />
           </div>
         </div>
         {isModalOpen && (
