@@ -12,16 +12,19 @@ export default function Timer({
   decrementScore,
   zeroScore,
   setIsEndGame,
+  isPaused,
 }) {
   let timerID = null;
   const [timer, setTimer] = useState(gameDuration);
 
   useEffect(() => {
-    if (timer > 0) {
+    if (timer > 0 && !isPaused) {
       timerID = setTimeout(() => {
         setTimer(timer - 1);
         decrementScore(10);
       }, 1000);
+    } else if (timer > 0 && isPaused) {
+      clearInterval(timerID);
     } else {
       // trigger endgame screen
       setIsEndGame((prev) => ({ ...prev, status: true, remainingTime: timer }));
@@ -33,7 +36,7 @@ export default function Timer({
     return function cleanUp() {
       clearInterval(timerID);
     };
-  }, [timer]);
+  }, [timer, isPaused]);
 
   return (
     <div className="flex w-fit min-w-[180px] items-center gap-x-3 rounded-full border-2 border-neutral-light px-8 py-2">
@@ -68,4 +71,5 @@ Timer.propTypes = {
   decrementScore: PropTypes.func.isRequired,
   zeroScore: PropTypes.func.isRequired,
   setIsEndGame: PropTypes.func.isRequired,
+  isPaused: PropTypes.bool.isRequired,
 };

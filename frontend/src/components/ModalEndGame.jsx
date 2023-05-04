@@ -32,7 +32,7 @@ export default function ModalEndGame({
     >
       <div className="content-wrapper flex flex-col items-center justify-center gap-16 px-4 py-2">
         <h1 className="font-cinzel text-3xl">{heading}</h1>
-        <h2 className="font-cinzel text-lg">{message}</h2>
+        <h2 className="font-ibarra text-xl">{message}</h2>
 
         {/* display cards only if not game over */}
         {status ? (
