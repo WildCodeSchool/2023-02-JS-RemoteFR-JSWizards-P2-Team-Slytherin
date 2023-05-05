@@ -13,14 +13,14 @@ export default function Clue({
   const [alreadyClicked, setAlreadyClicked] = useState(false);
 
   const handleClick = () => {
-    // 1. Change button styling (already clicked)
+    // 1. change button styling (already clicked)
     setAlreadyClicked(true);
 
-    // 2. Send message related to the clicked clue to the dialog box with
+    // 2. send message related to the clicked clue to the dialog box with
     const newMessage = { category, response };
     addMessage(newMessage);
 
-    // 3. Decrement score
+    // 3. decrement score
     decrementScore(100);
   };
 

@@ -4,7 +4,7 @@ export default function ModalConfirm({
   selectedCard,
   setIsModalOpen,
   setSelectedCard,
-  setIsEndGame,
+  prepareEndGame,
   pauseTimer,
 }) {
   const { name } = selectedCard;
@@ -12,10 +12,9 @@ export default function ModalConfirm({
   const handleClickConfirm = () => {
     // 1. set timer to pause
     pauseTimer();
-    // 2. recuperer le score et le remonter au parent...
-    // 3. trigger endgame screen
-    setIsEndGame((prev) => ({ ...prev, status: true }));
-    // 4. close confirmation modal
+    // 2. request game to end
+    prepareEndGame(true);
+    // 3. close confirmation modal
     setIsModalOpen(false);
   };
 
@@ -63,6 +62,6 @@ ModalConfirm.propTypes = {
   }).isRequired,
   setSelectedCard: PropTypes.func.isRequired,
   setIsModalOpen: PropTypes.func.isRequired,
-  setIsEndGame: PropTypes.func.isRequired,
+  prepareEndGame: PropTypes.func.isRequired,
   pauseTimer: PropTypes.func.isRequired,
 };

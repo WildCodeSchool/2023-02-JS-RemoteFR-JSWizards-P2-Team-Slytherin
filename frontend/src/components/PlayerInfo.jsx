@@ -3,7 +3,7 @@ import { useState } from "react";
 import PropTypes from "prop-types";
 import ModalRulesHome from "./ModalRulesHome";
 
-export default function PlayerInfo({ handleAddPlayerInfo }) {
+export default function PlayerInfo({ updatePlayerInfo }) {
   const navigate = useNavigate();
 
   const [player, setPlayer] = useState({
@@ -13,15 +13,15 @@ export default function PlayerInfo({ handleAddPlayerInfo }) {
   });
 
   const handleSubmit = (event) => {
-    // 1. Prevent the page to be refreshed
+    // 1. prevent the page to be refreshed
     event.preventDefault();
-    // 2. Check player info before sending
+    // 2. check player info before sending
     const newPlayer = { ...player };
     if (!player.name) newPlayer.name = "Dobby";
     if (!player.house) newPlayer.house = "unknown magic school";
-    // 3. Send all PlayerInfo to the parent App
-    handleAddPlayerInfo(newPlayer);
-    // 4. Redirect to the GamePAge
+    // 3. send all PlayerInfo to the parent App
+    updatePlayerInfo(newPlayer);
+    // 4. redirect to the GamePAge
     navigate("/game");
   };
 
@@ -77,5 +77,5 @@ export default function PlayerInfo({ handleAddPlayerInfo }) {
 }
 
 PlayerInfo.propTypes = {
-  handleAddPlayerInfo: PropTypes.func.isRequired,
+  updatePlayerInfo: PropTypes.func.isRequired,
 };
