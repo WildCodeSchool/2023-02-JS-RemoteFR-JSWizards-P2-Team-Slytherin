@@ -119,7 +119,10 @@ function App() {
             }
           />
 
-          <Route path="score" element={<ScorePage />} />
+          <Route
+            path="score"
+            element={<ScorePage keyLocalStorage={LOCAL_STORAGE_KEY_BOARD} />}
+          />
           <Route path="*" element={<Page404 />} />
         </Routes>
       </div>

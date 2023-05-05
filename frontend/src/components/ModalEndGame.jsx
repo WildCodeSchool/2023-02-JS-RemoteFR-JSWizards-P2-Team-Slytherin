@@ -72,12 +72,6 @@ ModalEndGame.propTypes = {
     name: PropTypes.string.isRequired,
     image: PropTypes.string.isRequired,
   }).isRequired,
-  playerInfo: PropTypes.shape({
-    name: PropTypes.string,
-    house: PropTypes.string,
-    score: PropTypes.number,
-  }),
-  // remainingTime: PropTypes.number,
   result: PropTypes.shape({
     success: PropTypes.bool,
     heading: PropTypes.string,
@@ -86,13 +80,7 @@ ModalEndGame.propTypes = {
 };
 
 ModalEndGame.defaultProps = {
-  // remainingTime: null,
   selectedCard: null,
-  playerInfo: PropTypes.shape({
-    name: "",
-    house: "",
-    score: null,
-  }),
   result: PropTypes.shape({
     success: null,
     heading: "",
