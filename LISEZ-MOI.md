@@ -1,3 +1,64 @@
+# Projet Who Wiz It?
+
+![Version](https://img.shields.io/badge/version-1.0.0-blue.svg?cacheSeconds=2592000)
+[![Commit](https://img.shields.io/github/last-commit/ddZ6ii/WildCodeSchool/2023-02-JS-RemoteFR-JSWizards-P2-Team-Slytherin)](https://github.com/WildCodeSchool/2023-02-JS-RemoteFR-JSWizards-P2-Team-Slytherin)
+
+Bienvenue dans le fichier README du jeu Who Whiz It?
+Ce jeu interactif est inspiré du célèbre jeu "Qui Est-Ce?" adapté à l'univers d'Harry Potter.
+Fans de la saga de J.K. Rowling? Venez mettre à l'épreuve vos connaissances et défier le Choixpeau!
+
+# Description du Projet
+
+Le jeu Who Whiz It se compose de plusieurs pages :
+
+**📜 Page d'Acceuil:** cette page contient un formulaire permettant au joueur de personnaliser son expérience de jeu.
+
+**📜 Page de Jeu:** page essentielle du jeu, le joueur sera tenu de trouver la carte sélectionnée par le Choixpeau dans le délai imparti. Attention, le sore décrémente en fonction du temps et du nombre d'indices utilisés.
+
+**📜 Page des Scores:** cette page permet d'afficher le classement des parties précédentes
+
+## 🎯 Jeu
+
+---
+
+Le jeu est disponible à l'adresse suivante: <br>
+https://who-wiz-it.remote-fr-2.wilders.dev/
+
+![Website Screenshot](https://user-images.githubusercontent.com/126237877/236420944-09bfd74b-c3d5-4872-8f68-9ac280388f7b.png)
+
+## ⚙️ Technologies utilisées
+
+---
+
+<br>
+
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" width="10%" height="10%"/>
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-plain.svg" width="10%" height="10%"/>
+
+<br>
+
+## ⚙️ Ressources
+
+---
+
+<br>
+
+🌄 Images: PNGEGG <br>
+https://www.pngegg.com/
+<br>
+<br>
+🔈 Musique: DEPOSITPHOTOS<br>
+https://fr.depositphotos.com/stock-music/poudlard.html?sh=2a7892e185f4e5e6108991b92315160920a18ef5
+
+<br>
+
+# 👥 Auteurs
+
+👤 Oyhanna: https://github.com/OyhanaM <br>
+👤 Enzo: https://github.com/enzocastagnos <br>
+👤 Denis: https://github.com/ddZ6ii <br>
+👤 Stéphane: https://github.com/BigBull69 <br>
+
 ## Concept
 
 Ce template est conçu pour servir de base à tous les projets (P2/P3) suivants la stack React-Node-MySQL telle qu'enseignée à la Wild Code School. Il est préconfiguré avec un ensemble d'outils qui aideront les élèves à produire un code correspondant mieux aux standards du monde du travail et plus facile à maintenir, tout en restant simple à utiliser.
