@@ -11,7 +11,7 @@ export default function Timer({
   gameDuration,
   decrementScore,
   zeroScore,
-  setIsEndGame,
+  prepareEndGame,
   isPaused,
 }) {
   let timerID = null;
@@ -33,11 +33,11 @@ export default function Timer({
     } else if (timer > 0 && isPaused) {
       clearInterval(timerID);
     } else {
-      // trigger endgame screen
-      setIsEndGame((prev) => ({ ...prev, status: true, remainingTime: timer }));
-      // reset score
+      // 1. request game to end
+      prepareEndGame(true, timer);
+      // 2. reset score
       zeroScore();
-      // clear timer
+      // 3. clear timer
       clearTimeout(timerID);
     }
     return function cleanUp() {
@@ -77,6 +77,6 @@ Timer.propTypes = {
   gameDuration: PropTypes.number.isRequired,
   decrementScore: PropTypes.func.isRequired,
   zeroScore: PropTypes.func.isRequired,
-  setIsEndGame: PropTypes.func.isRequired,
+  prepareEndGame: PropTypes.func.isRequired,
   isPaused: PropTypes.bool.isRequired,
 };

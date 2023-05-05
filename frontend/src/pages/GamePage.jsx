@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 
 import Layout from "../components/Layout";
@@ -14,13 +14,16 @@ import ModalCountDown from "../components/ModalCountDown";
 
 import filterCharacters from "../helper/filterCharacters";
 import hatCard from "../helper/pickHatCard";
+import checkEndGame from "../helper/checkEndGame";
 
-export default function GamePage({ characters, playerInfo, score, setScore }) {
-  /**
-   * CONSTANTS
-   */
-  const gameDuration = 60;
-
+export default function GamePage({
+  characters,
+  playerInfo,
+  score,
+  setScore,
+  gameDuration,
+  updatePlayerInfo,
+}) {
   /**
    * STATES
    */
@@ -29,7 +32,7 @@ export default function GamePage({ characters, playerInfo, score, setScore }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedCard, setSelectedCard] = useState({});
   const [isPaused, setisPaused] = useState(true);
-  const [isEndGame, setIsEndGame] = useState({
+  const [endRequested, setEndRequested] = useState({
     status: false,
     remainingTime: null,
   });
@@ -37,6 +40,14 @@ export default function GamePage({ characters, playerInfo, score, setScore }) {
     category: "",
     response: `Greetings ${playerInfo.name} from ${playerInfo.house}! \n Will you be able to find the right card? \n Click on a hint to begin...`,
   });
+  const [result, setResult] = useState({
+    success: null,
+    heading: "",
+    message: "",
+  });
+
+  // TEST
+  const [endGame, triggerEndGame] = useState(false);
 
   /**
    * FUNCTIONS
@@ -48,6 +59,33 @@ export default function GamePage({ characters, playerInfo, score, setScore }) {
     if (val < score) return setScore((prevScore) => prevScore - val);
     return zeroScore();
   };
+  const prepareEndGame = (status, remainingTime = null) => {
+    // check whether the game is a win or loose
+    const gameResult = checkEndGame(
+      selectedCard,
+      hatCardPick,
+      playerInfo,
+      endRequested
+    );
+    setResult(gameResult);
+    // update info player with proper score
+    if (!gameResult.success) {
+      zeroScore();
+      // setScore(0);
+    }
+    // trigger endGame modal
+    setEndRequested((prev) => ({ ...prev, status, remainingTime }));
+  };
+
+  useEffect(() => {
+    if (endRequested.status) {
+      // update player info
+      const newPlayer = { ...playerInfo };
+      updatePlayerInfo({ ...newPlayer, score });
+      // trigger modal end Screen
+      triggerEndGame(true);
+    }
+  }, [endRequested]);
 
   /**
    * PAGE CONTENT
@@ -62,7 +100,7 @@ export default function GamePage({ characters, playerInfo, score, setScore }) {
               gameDuration={gameDuration}
               decrementScore={decrementScore}
               zeroScore={zeroScore}
-              setIsEndGame={setIsEndGame}
+              prepareEndGame={prepareEndGame}
               isPaused={isPaused}
             />
             <Score score={score} />
@@ -83,16 +121,15 @@ export default function GamePage({ characters, playerInfo, score, setScore }) {
             selectedCard={selectedCard}
             setSelectedCard={setSelectedCard}
             setIsModalOpen={setIsModalOpen}
-            setIsEndGame={setIsEndGame}
+            prepareEndGame={prepareEndGame}
             pauseTimer={pauseTimer}
           />
         )}
-        {isEndGame.status && (
+        {endGame && (
           <ModalEndGame
             selectedCard={selectedCard}
             hatCardPick={hatCardPick}
-            playerInfo={playerInfo}
-            remainingTime={isEndGame.remainingTime}
+            result={result}
           />
         )}
       </Layout>
@@ -118,6 +155,8 @@ GamePage.propTypes = {
   }),
   score: PropTypes.number.isRequired,
   setScore: PropTypes.func.isRequired,
+  gameDuration: PropTypes.number.isRequired,
+  updatePlayerInfo: PropTypes.func.isRequired,
 };
 
 GamePage.defaultProps = {
