@@ -29,15 +29,10 @@ export default function ScorePage({ keyLocalStorage }) {
         if (stat.score === null) return { ...stat, score: "-" };
         return { ...stat, score: `${String(stat.score)} pts` };
       });
-      // cloneStoredBoard.;
     }
     // 3. update state
     setScoreBoard([...cloneStoredBoard]);
   }, []);
-
-  // useEffect(() => {
-  //   console.log(scoreBoard);
-  // }, [scoreBoard]);
 
   return (
     <div className="bg-[url('./assets/img/background-welcome-screen-desktop.png')] bg-cover bg-left-bottom">
