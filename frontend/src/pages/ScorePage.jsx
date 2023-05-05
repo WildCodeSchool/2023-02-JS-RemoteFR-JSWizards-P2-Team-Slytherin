@@ -35,14 +35,14 @@ export default function ScorePage({ keyLocalStorage }) {
   }, []);
 
   return (
-    <div className="bg-[url('./assets/img/background-welcome-screen-desktop.png')] bg-cover bg-left-bottom">
+    <div className="bg-[url('../assets/img/background-welcome-screen-desktop.png')] bg-cover bg-left-bottom">
       <Layout>
         <div className="relative">
           <h1 className="mb-12 mr-[64px] mt-[84px] flex justify-end font-cinzel text-4xl text-neutral-light">
             Best players
           </h1>
           <div className="img-wrapper absolute left-1/2 top-full z-10 h-[120px] w-[169px] -translate-x-1/2 translate-y-1/2 rotate-[-8deg]">
-            <img src="./assets/img/flying-car-desktop.png" alt="flying car" />
+            <img src="../assets/img/flying-car-desktop.png" alt="flying car" />
           </div>
         </div>
 
