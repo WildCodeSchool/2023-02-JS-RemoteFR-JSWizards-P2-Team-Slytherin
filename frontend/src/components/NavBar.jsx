@@ -7,7 +7,7 @@ export default function NavBar() {
     <header>
       <nav className="flex items-center justify-between p-4">
         <button type="button">
-          <Link to="/">
+          <Link reloadDocument to="/">
             <img
               className="h-[68px] w-[180px]"
               src="../assets/logo/logo-desktop.png"
